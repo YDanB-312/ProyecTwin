@@ -1,0 +1,115 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background: white;
+      color: white;
+      margin: 0%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #004b23;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn-ingresar {
+      padding: 8px 18px;
+      border: 2px solid #007b33;
+      border-radius: 30px;
+      color: #007b33;
+      background: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-ingresar:hover {
+      background: #28cf4c;
+      color: white;
+    }
+
+    .btn-registrarme {
+      padding: 8px 18px;
+      border-radius: 30px;
+      border: none;
+      background: #007b33;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-registrarme:hover {
+      background: #28cf4c;
+    }
+
+    .gov-bar {
+      background: #000000;
+      color: white;
+      font-size: 0.9rem;
+      padding: 5px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    footer {
+        background-color: #004b23;
+        color: #fff;
+        padding: 1.5rem 1rem;
+        text-align:center;
+      }
+      
+      .contacto {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }

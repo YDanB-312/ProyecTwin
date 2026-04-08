@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar Avances - ProyecTwin</title>
+    <link rel="stylesheet" href="/CSS/Global CSS/global.css" />
+    <link rel="stylesheet" href="/CSS/CSS Paginas/registrar_avances.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Barra de gobierno -->
+    <div class="barra-gobierno">
+      <div class="contenedor-barra">
+        <span>Portal del SENA - República de Colombia</span>
+        <div class="accesibilidad">
+          <button class="btn-accesibilidad" aria-label="Alto contraste">
+            <i class="fas fa-adjust"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+     <header class="header-principal">
+    <div class="contenedor-header">
+        <div class="grupo-izquierdo">
+            <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo" class="logo-header-img">
+            <h1 class="titulo-header">ProyecTwin - Panel del Aprendiz</h1>
+        </div>
+        
+        <div class="grupo-derecho">
+            <img src="/ProyecTwin Daniel/Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
+            
+            <div class="notificaciones">
+                <i class="fas fa-bell"></i> Notificaciones <span>5</span>
+            </div>
+            
+            <div class="usuario">
+                <div class="avatar"><i class="fas fa-user"></i></div>
+                <span>María González | ADSO</span>
+            </div>
+
+            <a href="#" class="btn-cerrar-sesion-rojo">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </a>
+        </div>
+    </div>
+</header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <ul class="menu-principal">
+        <li>
+          <a href="dashboard_aprendiz.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-home"></i></div>
+            Dashboard</a
+          >
+        </li>
+        <li>
+          <a href="Mis_proyectos.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-folder-open"></i></div>
+            Mis Proyectos</a
+          >
+        </li>
+        <li>
+          <a href="nuevo_proyecto.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-plus-circle"></i></div>
+            Nuevo Proyecto</a
+          >
+        </li>
+        <li>
+          <a href="alertas.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-bell"></i></div>
+            Alertas</a
+          >
+        </li>
+        <li>
+          <a href="mensajes.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-envelope"></i></div>
+            Mensajes</a
+          >
+        </li>
+        <li>
+          <a href="registrar_avances.html" class="enlace-nav activo"
+            ><div class="icono-nav"><i class="fas fa-chart-line"></i></div>
+            Registrar Avances</a
+          >
+        </li>
+        <li>
+          <a href="mi_perfil.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-user-cog"></i></div>
+            Mi Perfil</a
+          >
+        </li>
+    
+      </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="contenido-principal">
+      <div class="contenedor-pagina">
+        <!-- Encabezado de página -->
+        <div class="encabezado-pagina">
+          <h1 class="titulo-pagina">
+            <i class="fas fa-chart-line"></i> Registrar Avances
+          </h1>
+          <p class="descripcion-pagina">
+            Registra el progreso trimestral de tus proyectos formativos y lleva
+            un control detallado de tus avances.
+          </p>
+        </div>
+
+        <!-- Selección de proyecto -->
+        <section class="seccion-proyectos">
+          <div class="tarjeta-proyecto">
+            <div class="encabezado-proyecto">
+              <div class="info-proyecto">
+                <h3>Sistema de Gestión Académica</h3>
+                <div class="meta-proyecto">
+                  <div class="meta-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Instructor: Carlos Ruiz</span>
+                  </div>
+                  <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Fecha límite: 15 Dic 2023</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="estado-proyecto estado-aprobado"
+                      >Aprobado</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>
+              Plataforma web integral para la gestión de calificaciones,
+              asistencia y recursos educativos en instituciones de educación
+              media.
+            </p>
+          </div>
+        </section>
+
+        <!-- Formulario de registro de avances -->
+        <section class="formulario-avances">
+          <h2
+            style="
+              margin-bottom: 25px;
+              color: var(--color-texto);
+              font-size: 1.4rem;
+            "
+          >
+            Registrar Nuevo Avance
+          </h2>
+
+          <form id="formularioAvance">
+            <div class="grupo-formulario">
+              <label class="etiqueta-formulario">Trimestre *</label>
+              <div class="selector-trimestre">
+                <div class="opcion-trimestre">
+                  <input
+                    type="radio"
+                    id="trimestre1"
+                    name="trimestre"
+                    value="1"
+                    checked
+                  />
+                  <label for="trimestre1">
+                    <div class="icono-trimestre">
+                      <i class="fas fa-flag"></i>
+                    </div>
+                    <div>Trimestre 1</div>
+                  </label>
+                </div>
+                <div class="opcion-trimestre">
+                  <input
+                    type="radio"
+                    id="trimestre2"
+                    name="trimestre"
+                    value="2"
+                  />
+                  <label for="trimestre2">
+                    <div class="icono-trimestre">
+                      <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <div>Trimestre 2</div>
+                  </label>
+                </div>
+                <div class="opcion-trimestre">
+                  <input
+                    type="radio"
+                    id="trimestre3"
+                    name="trimestre"
+                    value="3"
+                  />
+                  <label for="trimestre3">
+                    <div class="icono-trimestre">
+                      <i class="fas fa-trophy"></i>
+                    </div>
+                    <div>Trimestre 3</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label class="etiqueta-formulario" for="avances"
+                >Avances Realizados *</label
+              >
+              <textarea
+                class="campo-formulario"
+                id="avances"
+                name="avances"
+                placeholder="Describe los avances que has logrado en este trimestre..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="grupo-formulario">
+              <label class="etiqueta-formulario" for="dificultades"
+                >Dificultades Encontradas</label
+              >
+              <textarea
+                class="campo-formulario"
+                id="dificultades"
+                name="dificultades"
+                placeholder="Describe las dificultades o desafíos que enfrentaste durante este período..."
+              ></textarea>
+            </div>
+
+            <div class="grupo-formulario">
+              <label class="etiqueta-formulario" for="proximos-pasos"
+                >Próximos Pasos *</label
+              >
+              <textarea
+                class="campo-formulario"
+                id="proximos-pasos"
+                name="proximos_pasos"
+                placeholder="Describe los próximos pasos que planeas realizar en el siguiente trimestre..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="grupo-formulario">
+              <label class="etiqueta-formulario" for="evidencias"
+                >Evidencias (Opcional)</label
+              >
+              <input
+                type="file"
+                class="campo-formulario"
+                id="evidencias"
+                name="evidencias"
+                multiple
+                accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+              />
+              <small
+                style="
+                  color: var(--color-texto-claro);
+                  margin-top: 5px;
+                  display: block;
+                "
+              >
+                Formatos aceptados: PDF, Word, JPG, PNG (Máx. 10MB por archivo)
+              </small>
+            </div>
+
+            <div class="acciones-formulario">
+              <button type="button" class="btn btn-secundario">
+                <i class="fas fa-times"></i> Cancelar
+              </button>
+              <button type="submit" class="btn btn-primario">
+                <i class="fas fa-save"></i> Guardar Avance
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Historial de avances -->
+        <section class="seccion-historial">
+          <div class="tarjeta-historial">
+            <h2
+              style="
+                margin-bottom: 20px;
+                color: var(--color-texto);
+                font-size: 1.4rem;
+              "
+            >
+              <i class="fas fa-history"></i> Historial de Avances
+            </h2>
+
+            <div class="lista-avances">
+              <div class="item-avance">
+                <div class="encabezado-avance">
+                  <span class="trimestre-avance"
+                    >Trimestre 1 - Avance Inicial</span
+                  >
+                  <span class="fecha-avance">15 Sept 2023</span>
+                </div>
+                <div class="contenido-avance">
+                  <h4>Avances Realizados:</h4>
+                  <p>
+                    Se completó la investigación inicial y el análisis de
+                    requerimientos. Se diseñó la arquitectura básica del sistema
+                    y se crearon los primeros prototipos de interfaz.
+                  </p>
+
+                  <div class="etiqueta-seccion">Dificultades Encontradas:</div>
+                  <p>
+                    Problemas para definir el alcance exacto del proyecto y
+                    seleccionar las tecnologías más adecuadas.
+                  </p>
+
+                  <div class="etiqueta-seccion">Próximos Pasos:</div>
+                  <p>
+                    Iniciar el desarrollo del módulo de autenticación y la base
+                    de datos. Realizar pruebas de concepto con las tecnologías
+                    seleccionadas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item-avance">
+                <div class="encabezado-avance">
+                  <span class="trimestre-avance"
+                    >Trimestre 2 - Desarrollo Inicial</span
+                  >
+                  <span class="fecha-avance">15 Nov 2023</span>
+                </div>
+                <div class="contenido-avance">
+                  <h4>Avances Realizados:</h4>
+                  <p>
+                    Se desarrolló el módulo de autenticación y la estructura de
+                    la base de datos. Se implementaron las primeras
+                    funcionalidades del sistema de calificaciones.
+                  </p>
+
+                  <div class="etiqueta-seccion">Dificultades Encontradas:</div>
+                  <p>
+                    Complejidad en la integración de diferentes componentes del
+                    sistema. Problemas de rendimiento en consultas complejas a
+                    la base de datos.
+                  </p>
+
+                  <div class="etiqueta-seccion">Próximos Pasos:</div>
+                  <p>
+                    Optimizar las consultas a la base de datos. Desarrollar el
+                    módulo de reportes y comenzar con las pruebas de
+                    integración.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer - AHORA DENTRO DEL CONTENEDOR PRINCIPAL -->
+      <footer class="pie-pagina">
+        <div class="contenedor-pie">
+          <div class="seccion-pie">
+            <h3>ProyecTwin SENA</h3>
+            <p>
+              Sistema de gestión y detección de similitudes para proyectos de
+              formación.
+            </p>
+          </div>
+          <div class="seccion-pie">
+            <h3>Enlaces Rápidos</h3>
+            <ul class="enlaces-pie">
+              <li>
+                <a href="dashboard.html"><i class="fas fa-home"></i> Inicio</a>
+              </li>
+              <li>
+                <a href="proyectos.html"><i class="fas fa-folder-open"></i> Mis Proyectos</a>
+              </li>
+              <li>
+                <a href="avances.html"><i class="fas fa-chart-line"></i> Registrar Avances</a>
+              </li>
+              <li>
+                <a href="mensajes.html"><i class="fas fa-envelope"></i> Mensajes</a>
+              </li>
+            </ul>
+          </div>
+          <div class="seccion-pie">
+            <h3>Contacto</h3>
+            <div class="info-contacto">
+              <p><i class="fas fa-phone"></i> 3235421165</p>
+              <p><i class="fas fa-envelope"></i> sena@correo.edu.co</p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Centro de Formación SENA
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="derechos-autor">
+          <p>&copy; 2023 ProyecTwin SENA. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

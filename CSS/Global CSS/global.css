@@ -1,0 +1,38 @@
+:root {
+  /* Paleta de Colores (Verde Azulado, Azul Profundo y Morado) */
+  --color-primario:  #00af00;       /* Cian/Verde Azulado Brillante (Teal) */
+  --color-secundario: #e2605b;     /* Azul Índigo Profundo (para estabilidad) */
+  --color-accento: #16cc9e;        /* Morado Vibrante (para acentos llamativos) */
+  --color-fondo: #f0f9ff;          /* Fondo Azul muy Claro (casi blanco) */
+  --color-texto: #1e293b;          /* Texto Gris Oscuro (legibilidad) */
+  --color-texto-claro: #64748b;    /* Texto Gris Secundario */
+  --color-borde: #e0f2f7;          /* Bordes Azules/Cian suaves */
+  --color-sidebar: #d3d0d0;
+  --color-header: #168A45;        /* Sidebar Azul Índigo Profundo (alto contraste) */
+  --color-exito: #10b981;          /* Verde de Éxito estándar (buen contraste) */
+  --color-advertencia: #f59e0b;    /* Ámbar para advertencia */
+  --color-peligro: #ef4444;        /* Rojo para peligro */
+  
+  /* Gradientes (Opcional) */
+  --gradient-primario: linear-gradient(to right, #06b6d4, #22d3ee); /* Cian a más claro */
+  --gradient-sidebar: linear-gradient(to bottom, #1e40af, #1d368d); /* Azul Profundo a más oscuro */
+
+  --sombra-suave: 0 1px 3px rgba(0,0,0,0.1);
+  --sombra-media: 0 4px 6px rgba(0,0,0,0.1);
+  --radio-borde: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  min-height: 100vh;
+  line-height: 1.6;
+}

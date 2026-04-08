@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Proyectos - ProyecTwin</title>
+    <link rel="stylesheet" href="/CSS/Global CSS/global.css" />
+    <link rel="stylesheet" href="/CSS/CSS Paginas/mis_proyectos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Barra de gobierno -->
+    <div class="barra-gobierno">
+      <div class="contenedor-barra">
+        <span>Portal del SENA - República de Colombia</span>
+        <div class="accesibilidad">
+          <button class="btn-accesibilidad" aria-label="Alto contraste">
+            <i class="fas fa-adjust"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+   <header class="header-principal">
+    <div class="contenedor-header">
+        <div class="grupo-izquierdo">
+            <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo" class="logo-header-img">
+            <h1 class="titulo-header">ProyecTwin - Panel del Aprendiz</h1>
+        </div>
+        
+        <div class="grupo-derecho">
+            <img src="/ProyecTwin Daniel/Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
+            
+            <div class="notificaciones">
+                <i class="fas fa-bell"></i> Notificaciones <span>5</span>
+            </div>
+            
+            <div class="usuario">
+                <div class="avatar"><i class="fas fa-user"></i></div>
+                <span>María González | ADSO</span>
+            </div>
+
+            <a href="#" class="btn-cerrar-sesion-rojo">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </a>
+        </div>
+    </div>
+</header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+
+      <ul class="menu-principal">
+        <li>
+          <a href="dashboard_aprendiz.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-home"></i></div>
+            Dashboard</a
+          >
+        </li>
+        <li>
+          <a href="Mis_proyectos.html" class="enlace-nav activo"
+            ><div class="icono-nav"><i class="fas fa-folder-open"></i></div>
+            Mis Proyectos</a
+          >
+        </li>
+        <li>
+          <a href="nuevo_proyecto.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-plus-circle"></i></div>
+            Nuevo Proyecto</a
+          >
+        </li>
+        <li>
+          <a href="alertas.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-bell"></i></div>
+            Alertas</a
+          >
+        </li>
+        <li>
+          <a href="mensajes.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-envelope"></i></div>
+            Mensajes</a
+          >
+        </li>
+        <li>
+          <a href="registrar_avances.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-chart-line"></i></div>
+            Registrar Avances</a
+          >
+        </li>
+        <li>
+          <a href="mi_perfil.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-user-cog"></i></div>
+            Mi Perfil</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="contenido-principal">
+      <div class="contenedor-proyectos">
+        <!-- Encabezado de página -->
+        <div class="encabezado-pagina">
+          <h1 class="titulo-pagina">
+            <i class="fas fa-folder-open"></i> Mis Proyectos
+          </h1>
+          <button class="btn-primario">
+            <i class="fas fa-plus"></i> Nuevo Proyecto
+          </button>
+        </div>
+
+        <!-- Sección de filtros -->
+        <section class="seccion-filtros">
+          <h3 class="filtros-titulo">
+            <i class="fas fa-filter"></i> Filtros de Búsqueda
+          </h3>
+          <div class="contenedor-filtros">
+            <div class="grupo-filtro">
+              <label for="estado">Estado del Proyecto</label>
+              <select id="estado" class="select-filtro">
+                <option value="">Todos los estados</option>
+                <option value="borrador">Borrador</option>
+                <option value="revision">En Revisión</option>
+                <option value="aprobado">Aprobado</option>
+                <option value="rechazado">Rechazado</option>
+              </select>
+            </div>
+            <div class="grupo-filtro">
+              <label for="fecha">Fecha de Creación</label>
+              <select id="fecha" class="select-filtro">
+                <option value="">Cualquier fecha</option>
+                <option value="ultima-semana">Última semana</option>
+                <option value="ultimo-mes">Último mes</option>
+                <option value="ultimo-trimestre">Último trimestre</option>
+              </select>
+            </div>
+            <div class="grupo-filtro">
+              <label for="instructor">Instructor</label>
+              <select id="instructor" class="select-filtro">
+                <option value="">Todos los instructores</option>
+                <option value="ruiz">Carlos Ruiz</option>
+                <option value="gomez">Ana Gómez</option>
+                <option value="lopez">Miguel López</option>
+              </select>
+            </div>
+            <div class="grupo-filtro">
+              <label for="busqueda">Buscar por nombre</label>
+              <input
+                type="text"
+                id="busqueda"
+                class="input-filtro"
+                placeholder="Nombre del proyecto..."
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Estado -->
+        <section class="estado-vacio">
+          <div class="icono-vacio">
+            <i class="fas fa-folder-open"></i>
+          </div>
+          <h3>No tienes proyectos registrados</h3>
+          <p>
+            Comienza registrando tu primer proyecto para aprovechar todas las
+            funcionalidades del sistema. Podrás gestionar tus propuestas,
+            recibir alertas de similitud y hacer seguimiento a tus avances.
+          </p>
+          <button class="btn-primario">
+            <i class="fas fa-plus"></i> Crear mi primer proyecto
+          </button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pie-pagina">
+          <div class="contenedor-pie">
+            <div class="seccion-pie">
+              <h3>ProyecTwin SENA</h3>
+              <p>
+                Sistema de gestión y detección de similitudes para proyectos de
+                formación.
+              </p>
+            </div>
+            <div class="seccion-pie">
+              <h3>Enlaces Rápidos</h3>
+              <ul class="enlaces-pie">
+                <li>
+                  <a href="dashboard.html"
+                    ><i class="fas fa-home"></i> Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a href="proyectos.html"
+                    ><i class="fas fa-folder-open"></i> Mis Proyectos</a
+                  >
+                </li>
+                <li>
+                  <a href="alertas.html"><i class="fas fa-bell"></i> Alertas</a>
+                </li>
+                <li>
+                  <a href="mensajes.html"
+                    ><i class="fas fa-envelope"></i> Mensajes</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="seccion-pie">
+              <h3>Contacto</h3>
+              <div class="info-contacto">
+                <p><i class="fas fa-phone"></i> 3235421165</p>
+                <p><i class="fas fa-envelope"></i> sena@correo.edu.co</p>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> Centro de Formación SENA
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="derechos-autor">
+            <p>&copy; 2023 ProyecTwin SENA. Todos los derechos reservados.</p>
+          </div>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

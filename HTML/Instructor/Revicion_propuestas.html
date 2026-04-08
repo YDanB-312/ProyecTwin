@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revisión de Propuestas - Instructor ProyecTwin</title>
+    <link rel="stylesheet" href="/CSS/Global CSS/global.css" />
+    <link rel="stylesheet" href="/CSS/CSS Paginas/revision_propuestas.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <!-- Barra de gobierno -->
+    <div class="barra-gobierno">
+        <div class="contenedor-barra">
+            <span>Portal del SENA - República de Colombia</span>
+            <div class="accesibilidad">
+                <button class="btn-accesibilidad" aria-label="Alto contraste">
+                    <i class="fas fa-adjust"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-principal">
+    <div class="contenedor-header">
+        <div class="grupo-izquierdo">
+            <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo" class="logo-header-img">
+            <h1 class="titulo-header">ProyecTwin - Panel del Instructor</h1>
+        </div>
+        
+        <div class="grupo-derecho">
+            <img src="/ProyecTwin Daniel/Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
+            
+            <div class="notificaciones">
+                <i class="fas fa-bell"></i> Notificaciones <span>5</span>
+            </div>
+            
+            <div class="usuario">
+                <div class="avatar"><i class="fas fa-user"></i></div>
+                <span>María González | ADSO</span>
+            </div>
+
+            <a href="#" class="btn-cerrar-sesion-rojo">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </a>
+        </div>
+    </div>
+</header>
+
+    <!-- Sidebar -->
+     <nav class="sidebar">
+
+        <ul class="menu-principal">
+            <li>
+                <a href="dashboard_instructor.html" class="enlace-nav ">
+                    <div class="icono-nav"><i class="fas fa-home"></i></div>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+          <a href="Mis_proyectos.html" class="enlace-nav "
+            ><div class="icono-nav"><i class="fas fa-folder-open"></i></div>
+            Proyectos</a
+          >
+        </li>
+            <li>
+                <a href="Revicion_propuestas.html" class="enlace-nav activo">
+                    <div class="icono-nav"><i class="fas fa-tasks"></i></div>
+                    Revisión de Propuestas
+                </a>
+            </li>
+            <li>
+                <a href="revision_avances.html" class="enlace-nav ">
+                    <div class="icono-nav"><i class="fas fa-chart-line"></i></div>
+                    Revisión de Avances
+                </a>
+            </li>
+            <li>
+                <a href="historial_revisiones.html" class="enlace-nav ">
+                    <div class="icono-nav"><i class="fas fa-history"></i></div>
+                    Historial de Revisiones
+                </a>
+            </li>
+            <li>
+                <a href="perfil_instructor.html" class="enlace-nav">
+                    <div class="icono-nav"><i class="fas fa-user-cog"></i></div>
+                    Mi Perfil
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="contenido-principal">
+        <div class="contenedor-revision">
+            <!-- Encabezado de página -->
+            <div class="encabezado-pagina">
+                <h1 class="titulo-pagina">
+                    <i class="fas fa-tasks"></i> Revisión de Propuestas
+                </h1>
+                <div class="contadores">
+                    <span class="contador-pendientes">8 propuestas pendientes</span>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <section class="seccion-filtros">
+                <h3 class="filtros-titulo">
+                    <i class="fas fa-filter"></i> Filtrar Propuestas
+                </h3>
+                <div class="contenedor-filtros">
+                    <div class="grupo-filtro">
+                        <label for="estado-propuesta">Estado</label>
+                        <select id="estado-propuesta" class="select-filtro">
+                            <option value="">Todos los estados</option>
+                            <option value="pendiente">Pendientes</option>
+                            <option value="aprobado">Aprobadas</option>
+                            <option value="rechazado">Rechazadas</option>
+                            <option value="observado">Con observaciones</option>
+                        </select>
+                    </div>
+                    <div class="grupo-filtro">
+                        <label for="fecha-propuesta">Fecha</label>
+                        <select id="fecha-propuesta" class="select-filtro">
+                            <option value="">Cualquier fecha</option>
+                            <option value="hoy">Hoy</option>
+                            <option value="semana">Última semana</option>
+                            <option value="mes">Último mes</option>
+                        </select>
+                    </div>
+                    <div class="grupo-filtro">
+                        <label for="programa">Programa</label>
+                        <select id="programa" class="select-filtro">
+                            <option value="">Todos los programas</option>
+                            <option value="adso">ADSO</option>
+                            <option value="sistemas">Sistemas</option>
+                            <option value="multimedia">Multimedia</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lista de propuestas -->
+            <div class="lista-propuestas">
+                <!-- Propuesta 1 -->
+                <div class="tarjeta-propuesta">
+                    <div class="encabezado-propuesta">
+                        <div class="info-basica">
+                            <h3>Sistema IoT para Agricultura</h3>
+                            <div class="meta-info">
+                                <span class="aprendiz">
+                                    <i class="fas fa-user"></i> Ana Martínez
+                                </span>
+                                <span class="programa">
+                                    <i class="fas fa-graduation-cap"></i> ADSO
+                                </span>
+                                <span class="fecha">
+                                    <i class="fas fa-calendar"></i> 15 Nov 2023
+                                </span>
+                            </div>
+                        </div>
+                        <div class="estado-propuesta estado-pendiente">
+                            Pendiente
+                        </div>
+                    </div>
+                    
+                    <div class="contenido-propuesta">
+                        <p><strong>Descripción:</strong> Sistema de monitoreo inteligente para cultivos utilizando sensores IoT que miden humedad, temperatura y nutrientes del suelo.</p>
+                        
+                        <div class="detalles-tecnicos">
+                            <div class="detalle">
+                                <strong>Tecnologías:</strong> Arduino, Python, Firebase, React Native
+                            </div>
+                            <div class="detalle">
+                                <strong>Línea Tecnológica:</strong> Desarrollo de Software
+                            </div>
+                            <div class="detalle">
+                                <strong>Palabras clave:</strong> IoT, agricultura, sensores, monitoreo
+                            </div>
+                        </div>
+
+                        <div class="alerta-similitud">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong>Alerta:</strong> 45% de similitud detectada con proyecto existente
+                        </div>
+                    </div>
+
+                    <div class="acciones-propuesta">
+                        <button class="btn-accion btn-aprobar">
+                            <i class="fas fa-check"></i> Aprobar
+                        </button>
+                        <button class="btn-accion btn-observar">
+                            <i class="fas fa-comment"></i> Agregar Observaciones
+                        </button>
+                        <button class="btn-accion btn-rechazar">
+                            <i class="fas fa-times"></i> Rechazar
+                        </button>
+                        <button class="btn-accion btn-detalles">
+                            <i class="fas fa-eye"></i> Ver Detalles
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Propuesta 2 -->
+                <div class="tarjeta-propuesta">
+                    <div class="encabezado-propuesta">
+                        <div class="info-basica">
+                            <h3>App Móvil para Turismo Local</h3>
+                            <div class="meta-info">
+                                <span class="aprendiz">
+                                    <i class="fas fa-user"></i> Juan Pérez
+                                </span>
+                                <span class="programa">
+                                    <i class="fas fa-graduation-cap"></i> Multimedia
+                                </span>
+                                <span class="fecha">
+                                    <i class="fas fa-calendar"></i> 14 Nov 2023
+                                </span>
+                            </div>
+                        </div>
+                        <div class="estado-propuesta estado-pendiente">
+                            Pendiente
+                        </div>
+                    </div>
+                    
+                    <div class="contenido-propuesta">
+                        <p><strong>Descripción:</strong> Aplicación móvil que promueve el turismo local mostrando sitios de interés, rutas y eventos culturales.</p>
+                        
+                        <div class="detalles-tecnicos">
+                            <div class="detalle">
+                                <strong>Tecnologías:</strong> Flutter, Node.js, MongoDB, Google Maps API
+                            </div>
+                            <div class="detalle">
+                                <strong>Línea Tecnológica:</strong> Desarrollo Móvil
+                            </div>
+                            <div class="detalle">
+                                <strong>Palabras clave:</strong> turismo, app móvil, cultura, rutas
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="acciones-propuesta">
+                        <button class="btn-accion btn-aprobar">
+                            <i class="fas fa-check"></i> Aprobar
+                        </button>
+                        <button class="btn-accion btn-observar">
+                            <i class="fas fa-comment"></i> Agregar Observaciones
+                        </button>
+                        <button class="btn-accion btn-rechazar">
+                            <i class="fas fa-times"></i> Rechazar
+                        </button>
+                        <button class="btn-accion btn-detalles">
+                            <i class="fas fa-eye"></i> Ver Detalles
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Propuesta 3 (con observaciones) -->
+                <div class="tarjeta-propuesta">
+                    <div class="encabezado-propuesta">
+                        <div class="info-basica">
+                            <h3>Plataforma E-learning para Música</h3>
+                            <div class="meta-info">
+                                <span class="aprendiz">
+                                    <i class="fas fa-user"></i> Laura Gómez
+                                </span>
+                                <span class="programa">
+                                    <i class="fas fa-graduation-cap"></i> ADSO
+                                </span>
+                                <span class="fecha">
+                                    <i class="fas fa-calendar"></i> 12 Nov 2023
+                                </span>
+                            </div>
+                        </div>
+                        <div class="estado-propuesta estado-observado">
+                            Con Observaciones
+                        </div>
+                    </div>
+                    
+                    <div class="contenido-propuesta">
+                        <p><strong>Descripción:</strong> Plataforma web para aprendizaje de instrumentos musicales con lecciones interactivas y seguimiento de progreso.</p>
+                        
+                        <div class="observaciones">
+                            <h4><i class="fas fa-comment"></i> Observaciones del Instructor:</h4>
+                            <p>Se requiere definir mejor el alcance del proyecto y especificar las tecnologías para la reproducción de audio/video. Considerar integración con APIs de pago para monetización.</p>
+                        </div>
+                    </div>
+
+                    <div class="acciones-propuesta">
+                        <button class="btn-accion btn-aprobar">
+                            <i class="fas fa-check"></i> Aprobar
+                        </button>
+                        <button class="btn-accion btn-observar">
+                            <i class="fas fa-comment"></i> Editar Observaciones
+                        </button>
+                        <button class="btn-accion btn-rechazar">
+                            <i class="fas fa-times"></i> Rechazar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginación -->
+            <div class="paginacion">
+                <button class="btn-paginacion">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="btn-paginacion activa">1</button>
+                <button class="btn-paginacion">2</button>
+                <button class="btn-paginacion">3</button>
+                <button class="btn-paginacion">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Footer -->
+            <footer class="pie-pagina">
+                <div class="contenedor-pie">
+                    <div class="seccion-pie">
+                        <h3>ProyecTwin SENA</h3>
+                        <p>
+                            Sistema de gestión y detección de similitudes para proyectos de formación.
+                        </p>
+                    </div>
+                    <div class="seccion-pie">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul class="enlaces-pie">
+                            <li>
+                                <a href="dashboard_instructor.html"><i class="fas fa-home"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="revision_propuestas.html"><i class="fas fa-tasks"></i> Revisión de Propuestas</a>
+                            </li>
+                            <li>
+                                <a href="revision_avances.html"><i class="fas fa-chart-line"></i> Revisión de Avances</a>
+                            </li>
+                            <li>
+                                <a href="alertas_instructor.html"><i class="fas fa-bell"></i> Alertas</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="seccion-pie">
+                        <h3>Contacto</h3>
+                        <div class="info-contacto">
+                            <p><i class="fas fa-phone"></i> 3235421165</p>
+                            <p><i class="fas fa-envelope"></i> sena@correo.edu.co</p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> Centro de Formación SENA
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="derechos-autor">
+                    <p>&copy; 2023 ProyecTwin SENA. Todos los derechos reservados.</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo Proyecto - ProyecTwin</title>
+    <link rel="stylesheet" href="/CSS/Global CSS/global.css" />
+    <link rel="stylesheet" href="/CSS/CSS Paginas/nuevo_proyecto.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Barra de gobierno -->
+    <div class="barra-gobierno">
+      <div class="contenedor-barra">
+        <span>Portal del SENA - República de Colombia</span>
+        <div class="accesibilidad">
+          <button class="btn-accesibilidad" aria-label="Alto contraste">
+            <i class="fas fa-adjust"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+         <header class="header-principal">
+    <div class="contenedor-header">
+        <div class="grupo-izquierdo">
+            <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo" class="logo-header-img">
+            <h1 class="titulo-header">ProyecTwin - Panel del Aprendiz</h1>
+        </div>
+        
+        <div class="grupo-derecho">
+            <img src="/ProyecTwin Daniel/Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
+            
+            <div class="notificaciones">
+                <i class="fas fa-bell"></i> Notificaciones <span>5</span>
+            </div>
+            
+            <div class="usuario">
+                <div class="avatar"><i class="fas fa-user"></i></div>
+                <span>María González | ADSO</span>
+            </div>
+
+            <a href="#" class="btn-cerrar-sesion-rojo">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </a>
+        </div>
+    </div>
+</header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+
+      <ul class="menu-principal">
+        <li>
+          <a href="dashboard_aprendiz.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-home"></i></div>
+            Dashboard</a
+          >
+        </li>
+        <li>
+          <a href="Mis_proyectos.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-folder-open"></i></div>
+            Mis Proyectos</a
+          >
+        </li>
+        <li>
+          <a href="nuevo_proyecto.html" class="enlace-nav activo"
+            ><div class="icono-nav"><i class="fas fa-plus-circle"></i></div>
+            Nuevo Proyecto</a
+          >
+        </li>
+        <li>
+          <a href="alertas.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-bell"></i></div>
+            Alertas</a
+          >
+        </li>
+        <li>
+          <a href="mensajes.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-envelope"></i></div>
+            Mensajes</a
+          >
+        </li>
+        <li>
+          <a href="registrar_avances.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-chart-line"></i></div>
+            Registrar Avances</a
+          >
+        </li>
+        <li>
+          <a href="mi_perfil.html" class="enlace-nav"
+            ><div class="icono-nav"><i class="fas fa-user-cog"></i></div>
+            Mi Perfil</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="contenido-principal">
+      <div class="contenedor-formulario">
+        <!-- Encabezado de página -->
+        <div class="encabezado-pagina">
+          <h1 class="titulo-pagina">
+            <i class="fas fa-plus-circle"></i> Nuevo Proyecto
+          </h1>
+          <a href="proyectos.html" class="btn-secundario">
+            <i class="fas fa-arrow-left"></i> Volver a Mis Proyectos
+          </a>
+        </div>
+
+        <!-- Formulario -->
+        <form class="formulario-proyecto">
+          <!-- Información Básica -->
+          <section class="seccion-formulario">
+            <h2 class="titulo-seccion">
+              <i class="fas fa-info-circle"></i> Información Básica
+            </h2>
+
+            <div class="grupo-formulario">
+              <label for="titulo" class="etiqueta requerido"
+                >Título del Proyecto</label
+              >
+              <input
+                type="text"
+                id="titulo"
+                class="input-text"
+                placeholder="Ingresa un título descriptivo para tu proyecto"
+                required
+              />
+              <div class="campo-informacion">
+                Máximo 100 caracteres. Sé claro y específico.
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="resumen" class="etiqueta requerido"
+                >Resumen del Proyecto</label
+              >
+              <textarea
+                id="resumen"
+                class="textarea"
+                placeholder="Describe brevemente tu proyecto, incluyendo objetivos principales y metodología..."
+                maxlength="2000"
+                required
+              ></textarea>
+              <div class="contador-caracteres">
+                <span id="contador-resumen">0</span>/2000 caracteres
+              </div>
+              <div class="campo-informacion">
+                Máximo 300 palabras. Este resumen será usado para detectar
+                similitudes con otros proyectos.
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="palabras-clave" class="etiqueta requerido"
+                >Palabras Clave</label
+              >
+              <input
+                type="text"
+                id="palabras-clave"
+                class="input-text"
+                placeholder="Ej: desarrollo web, aplicacion movil, base de datos"
+                required
+              />
+              <div class="campo-informacion">
+                Separa cada palabra clave con comas. Mínimo 3, máximo 10.
+              </div>
+            </div>
+          </section>
+
+          <!-- Detalles Técnicos -->
+          <section class="seccion-formulario">
+            <h2 class="titulo-seccion">
+              <i class="fas fa-cogs"></i> Detalles Técnicos
+            </h2>
+
+            <div class="grupo-campos">
+              <div class="grupo-formulario">
+                <label for="linea-tecnologica" class="etiqueta requerido"
+                  >Línea de Aprendizaje</label
+                >
+                <select id="linea-tecnologica" class="select" required>
+                  <option value="">Selecciona una línea tecnológica</option>
+                </select>
+              </div>
+
+              <div class="grupo-formulario">
+                <label for="tecnologias" class="etiqueta requerido"
+                  >Tecnologías a Utilizar</label
+                >
+                <input
+                  type="text"
+                  id="tecnologias"
+                  class="input-text"
+                  placeholder="Ej: React, Node.js, MongoDB, Python"
+                  required
+                />
+                <div class="campo-informacion">
+                  Lista las principales tecnologías, frameworks y herramientas.
+                </div>
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="objetivos" class="etiqueta requerido"
+                >Objetivos Específicos</label
+              >
+              <textarea
+                id="objetivos"
+                class="textarea"
+                placeholder="Describe los objetivos específicos de tu proyecto..."
+                required
+              ></textarea>
+              <div class="campo-informacion">
+                Enumera los objetivos de manera clara y medible.
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="entregables" class="etiqueta requerido"
+                >Entregables Esperados</label
+              >
+              <textarea
+                id="entregables"
+                class="textarea"
+                placeholder="Describe los productos o resultados que entregarás al finalizar el proyecto..."
+                required
+              ></textarea>
+              <div class="campo-informacion">
+                Especifica los entregables tangibles de tu proyecto.
+              </div>
+            </div>
+          </section>
+
+          <!-- Información Adicional -->
+          <section class="seccion-formulario">
+            <h2 class="titulo-seccion">
+              <i class="fas fa-clipboard-list"></i> Información Adicional
+            </h2>
+
+            <div class="grupo-campos">
+              <div class="grupo-formulario">
+                <label for="duracion" class="etiqueta"
+                  >Duración Estimada (meses)</label
+                >
+                <input
+                  type="number"
+                  id="duracion"
+                  class="input-text"
+                  min="1"
+                  max="24"
+                  placeholder="6"
+                />
+              </div>
+
+              <div class="grupo-formulario">
+                <label for="fecha-inicio" class="etiqueta"
+                  >Fecha de Inicio Estimada</label
+                >
+                <input type="date" id="fecha-inicio" class="input-text" />
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label class="etiqueta">Tipo de Proyecto</label>
+              <div>
+                <label class="etiqueta-checkbox">
+                  <input
+                    type="radio"
+                    name="tipo-proyecto"
+                    value="aplicacion"
+                    class="checkbox"
+                    checked
+                  />
+                  Aplicación/Software
+                </label>
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="observaciones" class="etiqueta"
+                >Observaciones Adicionales</label
+              >
+              <textarea
+                id="observaciones"
+                class="textarea"
+                placeholder="Agrega cualquier información adicional que consideres relevante..."
+              ></textarea>
+            </div>
+          </section>
+
+          <!-- Acciones del Formulario -->
+          <div class="acciones-formulario">
+            <div class="acciones-izquierda">
+              <button type="submit" class="btn-primario">
+                <i class="fas fa-save"></i> Guardar Proyecto
+              </button>
+              <button type="button" class="btn-secundario">
+                <i class="fas fa-file-alt"></i> Guardar como Borrador
+              </button>
+            </div>
+            <a href="Mis_proyectos.html" class="btn-secundario">
+              <i class="fas fa-times"></i> Cancelar
+            </a>
+          </div>
+        </form>
+
+        <!-- Footer -->
+        <footer class="pie-pagina">
+          <div class="contenedor-pie">
+            <div class="seccion-pie">
+              <h3>ProyecTwin SENA</h3>
+              <p>
+                Sistema de gestión y detección de similitudes para proyectos de
+                formación.
+              </p>
+            </div>
+            <div class="seccion-pie">
+              <h3>Enlaces Rápidos</h3>
+              <ul class="enlaces-pie">
+                <li>
+                  <a href="dashboard.html"
+                    ><i class="fas fa-home"></i> Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a href="proyectos.html"
+                    ><i class="fas fa-folder-open"></i> Mis Proyectos</a
+                  >
+                </li>
+                <li>
+                  <a href="alertas.html"><i class="fas fa-bell"></i> Alertas</a>
+                </li>
+                <li>
+                  <a href="mensajes.html"
+                    ><i class="fas fa-envelope"></i> Mensajes</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="seccion-pie">
+              <h3>Contacto</h3>
+              <div class="info-contacto">
+                <p><i class="fas fa-phone"></i> 3235421165</p>
+                <p><i class="fas fa-envelope"></i> sena@correo.edu.co</p>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> Centro de Formación SENA
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="derechos-autor">
+            <p>&copy; 2023 ProyecTwin SENA. Todos los derechos reservados.</p>
+          </div>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
