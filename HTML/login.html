@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - ProyecTwin</title>
+    <link rel="stylesheet" href="/CSS/CSS Paginas/login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div class="barra-gobierno">
+        <div class="contenedor-barra">
+            <span>Portal del SENA - República de Colombia</span>
+        </div>
+    </div>
+
+    <main class="contenedor-login">
+        <div class="tarjeta-login">
+            <div class="formulario-login">
+                <div class="encabezado-login">
+                    <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo ProyecTwin" />
+                    <h1>Proyec<span>Twin</span></h1>
+                    <p>Plataforma de Gestión de Proyectos - SENA</p>
+                </div>
+
+                <form>
+                    <div class="grupo-campo">
+                        <label><i class="fas fa-envelope"></i> Correo Electrónico</label>
+                        <input type="email" placeholder="tu@correo.com" required />
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label><i class="fas fa-lock"></i> Contraseña</label>
+                        <div class="contenedor-password">
+                            <input type="password" placeholder="••••••••" required />
+                        </div>
+                    </div>
+
+                    <div class="opciones-login">
+                        <label><input type="checkbox" /> Recordarme</label>
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn-login">
+                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                    </button>
+
+                    <div class="separador"><span>O</span></div>
+
+                    <a href="register.html" class="btn-registro">
+                        <i class="fas fa-user-plus"></i> Crear una cuenta nueva
+                    </a>
+                </form>
+
+                <div class="info-prueba">
+                    <h4><i class="fas fa-info-circle"></i> Usuarios de prueba</h4>
+                    <div class="item-prueba">
+                        <span class="badge-prueba aprendiz">Aprendiz</span>
+                        <span class="texto-prueba">maria@correo.com / 123456</span>
+                    </div>
+                    <div class="item-prueba">
+                        <span class="badge-prueba instructor">Instructor</span>
+                        <span class="texto-prueba">carlos@correo.com / 123456</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-info-login">
+                <div>
+                    <h2>Bienvenido a ProyecTwin</h2>
+                    <p>El sistema de gestión y detección de similitudes para proyectos de formación del SENA.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Gestiona tus proyectos de formación</li>
+                        <li><i class="fas fa-check-circle"></i> Detecta similitudes con otros proyectos</li>
+                        <li><i class="fas fa-check-circle"></i> Realiza seguimiento de avances</li>
+                        <li><i class="fas fa-check-circle"></i> Comunícate con instructores y aprendices</li>
+                        <li><i class="fas fa-check-circle"></i> Evalúa propuestas y avances en tiempo real</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina-login">
+        <div class="contenedor-pie">
+            <span>ProyecTwin SENA © 2023</span>
+            <div class="info-contacto">
+                <span><i class="fas fa-phone"></i> 3235421165</span>
+                <span><i class="fas fa-envelope"></i> sena@correo.edu.co</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProyecTwin - SENA</title>
+    <link rel="stylesheet" href="/CSS/Global CSS/global.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        .landing-header {
+            background: var(--color-header);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 40px;
+            z-index: 999;
+        }
+        .landing-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .landing-logo img {
+            height: 35px;
+        }
+        .landing-logo h1 {
+            color: white;
+            font-size: 1.3rem;
+        }
+        .landing-btns {
+            display: flex;
+            gap: 12px;
+        }
+        .btn-ingresar-landing {
+            background: white;
+            color: var(--color-header);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .btn-ingresar-landing:hover {
+            background: var(--color-fondo);
+        }
+        .btn-registro-landing {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .btn-registro-landing:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--color-header, #168A45), #0d5c2e);
+            color: white;
+            padding: 80px 30px;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .hero-section h1 span {
+            color: #22d3ee;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .hero-btn {
+            padding: 14px 30px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        .hero-btn-primario {
+            background: white;
+            color: var(--color-header);
+        }
+        .hero-btn-primario:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .hero-btn-secundario {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        .hero-btn-secundario:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        /* Features */
+        .features-section {
+            padding: 60px 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .features-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--color-texto);
+            margin-bottom: 40px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--color-fondo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--color-header);
+        }
+        .feature-card h3 {
+            font-size: 1.2rem;
+            color: var(--color-texto);
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            color: var(--color-texto-claro);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Roles section */
+        .roles-section {
+            padding: 60px 30px;
+            background: var(--color-fondo);
+        }
+        .roles-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--color-texto);
+            margin-bottom: 40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .role-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .role-card h3 {
+            font-size: 1.3rem;
+            color: var(--color-texto);
+            margin: 15px 0 10px;
+        }
+        .role-card p {
+            color: var(--color-texto-claro);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .role-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-header);
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.3s;
+        }
+        .role-card a:hover {
+            gap: 12px;
+        }
+
+        /* Footer */
+        .pie-pagina-landing {
+            background: var(--color-header);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .pie-pagina-landing .contenedor-pie {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        .seccion-pie h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .seccion-pie p {
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        .enlaces-pie {
+            list-style: none;
+            padding: 0;
+        }
+        .enlaces-pie li {
+            margin-bottom: 8px;
+        }
+        .enlaces-pie a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .enlaces-pie a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+        .info-contacto p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .derechos-autor {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2rem; }
+            .hero-btns { flex-direction: column; align-items: center; }
+            .landing-header { flex-direction: column; gap: 10px; }
+            .pie-pagina-landing .contenedor-pie { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de gobierno -->
+    <div class="barra-gobierno">
+        <div class="contenedor-barra">
+            <span>Portal del SENA - República de Colombia</span>
+        </div>
+    </div>
+
+    <!-- Header sticky -->
+    <header class="landing-header">
+        <div class="landing-logo">
+            <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo ProyecTwin" />
+            <h1>Proyec<span style="color: #22d3ee;">Twin</span></h1>
+        </div>
+        <div class="landing-btns">
+            <a href="login.html" class="btn-ingresar-landing"><i class="fas fa-sign-in-alt"></i> Ingresar</a>
+            <a href="register.html" class="btn-registro-landing">Registrarme →</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <h1>Plataforma de Gestión de Proyectos <span>ProyecTwin</span></h1>
+        <p>Sistema de gestión y detección de similitudes para proyectos de formación del SENA</p>
+        <div class="hero-btns">
+            <a href="register.html" class="hero-btn hero-btn-primario"><i class="fas fa-user-plus"></i> Crear Cuenta</a>
+            <a href="login.html" class="hero-btn hero-btn-secundario"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section">
+        <h2>¿Qué puedes hacer en ProyecTwin?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-project-diagram"></i></div>
+                <h3>Gestión de Proyectos</h3>
+                <p>Registra, organiza y gestiona tus proyectos de formación de manera eficiente.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Detección de Similitudes</h3>
+                <p>Identifica posibles coincidencias con otros proyectos registrados en el sistema.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Seguimiento de Avances</h3>
+                <p>Registra y evalúa el progreso trimestral de cada proyecto.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                <h3>Comunicación Directa</h3>
+                <p>Comunícate con instructores y aprendices desde la plataforma.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-clipboard-check"></i></div>
+                <h3>Evaluación en Línea</h3>
+                <p>Los instructores evalúan propuestas y avances de forma digital.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                <h3>Notificaciones en Tiempo Real</h3>
+                <p>Recibe alertas sobre cambios de estado, comentarios y similitudes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roles -->
+    <section class="roles-section">
+        <h2>Accede según tu rol</h2>
+        <div class="roles-grid">
+            <div class="role-card">
+                <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
+                <h3>Aprendiz</h3>
+                <p>Registra tus proyectos, recibe feedback y haz seguimiento de tus avances.</p>
+                <a href="login.html">Ingresar como Aprendiz <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="role-card">
+                <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3>Instructor</h3>
+                <p>Evalúa propuestas, revisa avances y mantén el control de calidad.</p>
+                <a href="login.html">Ingresar como Instructor <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pie-pagina-landing">
+        <div class="contenedor-pie">
+            <div class="seccion-pie">
+                <h3>ProyecTwin SENA</h3>
+                <p>Sistema de gestión y detección de similitudes para proyectos de formación.</p>
+            </div>
+            <div class="seccion-pie">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="enlaces-pie">
+                    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+                    <li><a href="register.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+                    <li><a href="Aprendiz/dashboard_aprendiz.html"><i class="fas fa-home"></i> Dashboard Aprendiz</a></li>
+                    <li><a href="Instructor/dashboard_instructor.html"><i class="fas fa-chalkboard-teacher"></i> Dashboard Instructor</a></li>
+                    <li><a href="Admin/dashboard_admin.html"><i class="fas fa-user-shield"></i> Dashboard Admin</a></li>
+                </ul>
+            </div>
+            <div class="seccion-pie">
+                <h3>Contacto</h3>
+                <div class="info-contacto">
+                    <p><i class="fas fa-phone"></i> 3235421165</p>
+                    <p><i class="fas fa-envelope"></i> sena@correo.edu.co</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Centro de Formación SENA</p>
+                </div>
+            </div>
+        </div>
+        <div class="derechos-autor">
+            <p>&copy; 2023 ProyecTwin SENA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

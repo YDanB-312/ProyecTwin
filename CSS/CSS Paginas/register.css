@@ -1,0 +1,328 @@
+/* ========================================
+   REGISTER - ProyecTwin
+   ======================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f9ff;
+    min-height: 100vh;
+}
+
+/* Contenedor centrado */
+.contenedor-register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 40px);
+    padding: 40px 16px 20px;
+}
+
+/* Tarjeta */
+.tarjeta-register {
+    width: 100%;
+    max-width: 650px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+    padding: 35px 30px;
+}
+
+/* Encabezado */
+.encabezado-register {
+    text-align: center;
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.btn-volver {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #64748b;
+    text-decoration: none;
+    font-size: .85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    transition: color .3s;
+}
+
+.btn-volver:hover {
+    color: #00af00;
+}
+
+.encabezado-register img {
+    height: 48px;
+    margin: 0 auto 8px;
+    display: block;
+}
+
+.encabezado-register h1 {
+    font-size: 1.6rem;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.encabezado-register h1 span {
+    color: #168A45;
+}
+
+.encabezado-register p {
+    color: #64748b;
+    font-size: .9rem;
+    margin-top: 4px;
+}
+
+/* Secciones del formulario */
+.seccion-register {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0f2f7;
+}
+
+.seccion-register:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.titulo-seccion-register {
+    font-size: 1.1rem;
+    color: #334155;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.titulo-seccion-register i {
+    color: #168A45;
+}
+
+/* Grid de campos */
+.formulario-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.grupo-campo.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.grupo-campo label {
+    font-size: .88rem;
+    font-weight: 500;
+    color: #334155;
+}
+
+.requerido {
+    color: #ef4444;
+}
+
+.grupo-campo input,
+.grupo-campo select {
+    width: 100%;
+    padding: 10px 13px;
+    border: 1.5px solid #e0f2f7;
+    border-radius: 7px;
+    font-size: .93rem;
+    color: #1e293b;
+    background: #fafbfc;
+    transition: border-color .3s, box-shadow .3s;
+}
+
+.grupo-campo input:focus,
+.grupo-campo select:focus {
+    outline: 0;
+    border-color: #00af00;
+    box-shadow: 0 0 0 3px rgba(0, 175, 0, .08);
+}
+
+/* Selector de rol */
+.selector-rol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.tarjeta-rol {
+    border: 2px solid #e0f2f7;
+    border-radius: 10px;
+    padding: 20px 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.tarjeta-rol:hover {
+    border-color: #00af00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+}
+
+.tarjeta-rol input[type="radio"] {
+    display: none;
+}
+
+.tarjeta-rol input[type="radio"]:checked + .icono-rol {
+    background: #00af00;
+    color: #fff;
+}
+
+.tarjeta-rol:has(input:checked) {
+    border-color: #00af00;
+    background: rgba(0, 175, 0, .04);
+}
+
+.icono-rol {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f0fdf4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 1.4rem;
+    color: #168A45;
+    transition: all .3s;
+}
+
+.tarjeta-rol h3 {
+    font-size: .95rem;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.tarjeta-rol p {
+    font-size: .78rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Boton registrar */
+.btn-registrar {
+    width: 100%;
+    padding: 13px;
+    background: #00af00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background .3s, transform .3s, box-shadow .3s;
+    margin-top: 10px;
+}
+
+.btn-registrar:hover {
+    background: #009900;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 175, 0, .3);
+}
+
+/* Link a login */
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #e0f2f7;
+    color: #64748b;
+    font-size: .9rem;
+}
+
+.login-link a {
+    color: #168A45;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.pie-pagina-register {
+    text-align: center;
+    padding: 10px 16px;
+    font-size: .8rem;
+    color: #64748b;
+    background: #f0f9ff;
+    border-top: 1px solid #e0f2f7;
+}
+
+.pie-pagina-register .contenedor-pie {
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pie-pagina-register .info-contacto {
+    display: flex;
+    gap: 14px;
+}
+
+.pie-pagina-register .info-contacto span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 650px) {
+    .contenedor-register {
+        padding: 35px 10px 10px;
+    }
+
+    .tarjeta-register {
+        padding: 24px 16px;
+    }
+
+    .formulario-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .selector-rol {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-volver {
+        position: relative;
+        justify-content: center;
+        margin-bottom: 10px;
+        top: auto;
+        left: auto;
+    }
+
+    .pie-pagina-register .contenedor-pie {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pie-pagina-register .info-contacto {
+        flex-direction: column;
+        gap: 4px;
+    }
+}

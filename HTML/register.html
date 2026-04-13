@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear Cuenta - ProyecTwin</title>
+    <link rel="stylesheet" href="/CSS/CSS Paginas/register.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div class="barra-gobierno">
+        <div class="contenedor-barra">
+            <span>Portal del SENA - República de Colombia</span>
+        </div>
+    </div>
+
+    <main class="contenedor-register">
+        <div class="tarjeta-register">
+            <div class="encabezado-register">
+                <a href="login.html" class="btn-volver">
+                    <i class="fas fa-arrow-left"></i> Volver al login
+                </a>
+                <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo ProyecTwin" />
+                <h1>Proyec<span>Twin</span></h1>
+                <p>Crea tu cuenta para acceder a la plataforma</p>
+            </div>
+
+            <form>
+                <!-- Informacion personal -->
+                <div class="seccion-register">
+                    <h2 class="titulo-seccion-register">
+                        <i class="fas fa-user"></i> Informacion Personal
+                    </h2>
+                    <div class="formulario-grid">
+                        <div class="grupo-campo">
+                            <label>Nombre <span class="requerido">*</span></label>
+                            <input type="text" placeholder="Ej: Maria" required />
+                        </div>
+                        <div class="grupo-campo">
+                            <label>Apellido <span class="requerido">*</span></label>
+                            <input type="text" placeholder="Ej: Gonzalez" required />
+                        </div>
+                        <div class="grupo-campo">
+                            <label>Correo Electronico <span class="requerido">*</span></label>
+                            <input type="email" placeholder="tu@correo.com" required />
+                        </div>
+                        <div class="grupo-campo">
+                            <label>Telefono</label>
+                            <input type="tel" placeholder="Ej: 3235421165" />
+                        </div>
+                        <div class="grupo-campo">
+                            <label>Fecha de Nacimiento</label>
+                            <input type="date" />
+                        </div>
+                        <div class="grupo-campo">
+                            <label>Contraseña <span class="requerido">*</span></label>
+                            <input type="password" placeholder="Minimo 6 caracteres" minlength="6" required />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seleccion de rol -->
+                <div class="seccion-register">
+                    <h2 class="titulo-seccion-register">
+                        <i class="fas fa-id-badge"></i> Selecciona tu Rol
+                    </h2>
+                    <div class="selector-rol">
+                        <label class="tarjeta-rol">
+                            <input type="radio" name="rol" value="aprendiz" />
+                            <div class="icono-rol"><i class="fas fa-user-graduate"></i></div>
+                            <h3>Aprendiz</h3>
+                            <p>Registra y gestiona tus proyectos</p>
+                        </label>
+                        <label class="tarjeta-rol">
+                            <input type="radio" name="rol" value="instructor" />
+                            <div class="icono-rol"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <h3>Instructor</h3>
+                            <p>Evalua proyectos y avances</p>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Boton registrar -->
+                <button type="submit" class="btn-registrar">
+                    <i class="fas fa-user-check"></i> Registrarse
+                </button>
+            </form>
+
+            <div class="login-link">
+                ¿Ya tienes cuenta? <a href="login.html">Inicia sesion</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina-register">
+        <div class="contenedor-pie">
+            <span>ProyecTwin SENA © 2023</span>
+            <div class="info-contacto">
+                <span><i class="fas fa-phone"></i> 3235421165</span>
+                <span><i class="fas fa-envelope"></i> sena@correo.edu.co</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
