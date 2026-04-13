@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reportes de Fallas - Administrador ProyecTwin</title>
+    <link rel="stylesheet" href="/CSS/Global CSS/global.css" />
+    <link rel="stylesheet" href="/CSS/CSS Paginas/reportes_fallas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Contenedor de gestion */
+        .contenedor-gestion {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Encabezado de pagina */
+        .encabezado-pagina {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .titulo-pagina {
+            font-size: 1.8rem;
+            color: var(--color-texto);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Secciones */
+        .seccion-reporte {
+            margin-bottom: 40px;
+        }
+
+        .titulo-seccion {
+            font-size: 1.4rem;
+            color: var(--color-texto);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-borde);
+            margin-bottom: 20px;
+        }
+
+        /* Filtros */
+        .contenedor-filtros {
+            background: white;
+            border-radius: var(--radio-borde);
+            padding: 25px;
+            box-shadow: var(--sombra-suave);
+            margin-bottom: 30px;
+        }
+
+        .formulario-filtros {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            align-items: end;
+        }
+
+        .grupo-campo {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .grupo-campo label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-texto);
+        }
+
+        .grupo-campo select,
+        .grupo-campo input[type="text"],
+        .grupo-campo input[type="date"] {
+            padding: 10px 14px;
+            border: 1px solid var(--color-borde);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: var(--color-texto);
+            background: var(--color-fondo);
+            transition: all 0.3s;
+        }
+
+        .grupo-campo select:focus,
+        .grupo-campo input[type="text"]:focus,
+        .grupo-campo input[type="date"]:focus {
+            outline: none;
+            border-color: var(--color-primario);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+        }
+
+        .botones-filtros {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-filtrar {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            background: var(--color-primario);
+            color: white;
+        }
+
+        .btn-filtrar:hover {
+            background: var(--color-accento);
+            transform: translateY(-2px);
+        }
+
+        .btn-limpiar {
+            padding: 10px 20px;
+            border: 1px solid var(--color-borde);
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            background: white;
+            color: var(--color-texto);
+        }
+
+        .btn-limpiar:hover {
+            background: var(--color-fondo);
+        }
+
+        /* Cards de estadisticas */
+        .grid-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card-stat {
+            background: white;
+            border-radius: var(--radio-borde);
+            padding: 25px;
+            box-shadow: var(--sombra-suave);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s;
+            border-left: 4px solid var(--color-primario);
+        }
+
+        .card-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .card-stat:nth-child(1) { border-left-color: var(--color-advertencia); }
+        .card-stat:nth-child(2) { border-left-color: var(--color-primario); }
+        .card-stat:nth-child(3) { border-left-color: var(--color-exito); }
+        .card-stat:nth-child(4) { border-left-color: var(--color-secundario); }
+
+        .icono-card {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .icono-card-1 { background: linear-gradient(135deg, var(--color-advertencia), #fbbf24); }
+        .icono-card-2 { background: linear-gradient(135deg, var(--color-primario), #22d3ee); }
+        .icono-card-3 { background: linear-gradient(135deg, var(--color-exito), #34d399); }
+        .icono-card-4 { background: linear-gradient(135deg, var(--color-secundario), #818cf8); }
+
+        .info-card {
+            flex: 1;
+        }
+
+        .info-card h3 {
+            font-size: 0.95rem;
+            color: var(--color-texto-claro);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .valor-stat {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-texto);
+            line-height: 1;
+        }
+
+        .detalle-stat {
+            font-size: 0.85rem;
+            color: var(--color-texto-claro);
+            margin-top: 5px;
+        }
+
+        /* Tabla de reportes */
+        .contenedor-tabla {
+            background: white;
+            border-radius: var(--radio-borde);
+            box-shadow: var(--sombra-suave);
+            overflow: hidden;
+        }
+
+        .encabezado-tabla {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            background: var(--color-fondo);
+            border-bottom: 1px solid var(--color-borde);
+        }
+
+        .titulo-tabla {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-texto);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .total-registros {
+            font-size: 0.85rem;
+            color: var(--color-texto-claro);
+        }
+
+        .tabla-reportes {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabla-reportes thead {
+            background: var(--color-header);
+            color: white;
+        }
+
+        .tabla-reportes th {
+            padding: 14px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .tabla-reportes td {
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--color-borde);
+            font-size: 0.9rem;
+        }
+
+        .tabla-reportes tbody tr:hover {
+            background: var(--color-fondo);
+        }
+
+        .descripcion-corta {
+            max-width: 280px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .badge-estado {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        .badge-pendiente {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--color-advertencia);
+        }
+
+        .badge-en-proceso {
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--color-primario);
+        }
+
+        .badge-resuelto {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--color-exito);
+        }
+
+        .badge-cerrado {
+            background: rgba(100, 116, 139, 0.1);
+            color: #64748b;
+        }
+
+        .acciones-tabla {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-accion-tabla {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+        }
+
+        .btn-ver {
+            background: var(--color-primario);
+            color: white;
+        }
+
+        .btn-ver:hover {
+            background: var(--color-accento);
+        }
+
+        .btn-cambiar-estado {
+            background: var(--color-advertencia);
+            color: white;
+        }
+
+        .btn-cambiar-estado:hover {
+            background: #d97706;
+        }
+
+        /* Paginacion */
+        .contenedor-paginacion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            background: var(--color-fondo);
+            border-top: 1px solid var(--color-borde);
+        }
+
+        .info-paginacion {
+            font-size: 0.9rem;
+            color: var(--color-texto-claro);
+        }
+
+        .paginacion {
+            display: flex;
+            gap: 5px;
+        }
+
+        .btn-pagina {
+            min-width: 36px;
+            height: 36px;
+            border: 1px solid var(--color-borde);
+            border-radius: 6px;
+            background: white;
+            color: var(--color-texto);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-pagina:hover:not(.activo):not(:disabled) {
+            background: var(--color-primario);
+            color: white;
+            border-color: var(--color-primario);
+        }
+
+        .btn-pagina.activo {
+            background: var(--color-primario);
+            color: white;
+            border-color: var(--color-primario);
+        }
+
+        .btn-pagina:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        .pie-pagina {
+            background: var(--color-header);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: var(--radio-borde);
+        }
+
+        .contenedor-pie {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .seccion-pie h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .seccion-pie p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .enlaces-pie {
+            list-style: none;
+        }
+
+        .enlaces-pie li {
+            margin-bottom: 8px;
+        }
+
+        .enlaces-pie a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .enlaces-pie a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .info-contacto p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .derechos-autor {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .grid-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .encabezado-pagina {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .formulario-filtros {
+                grid-template-columns: 1fr;
+            }
+
+            .botones-filtros {
+                flex-direction: column;
+            }
+
+            .btn-filtrar,
+            .btn-limpiar {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .contenedor-pie {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .tabla-reportes {
+                font-size: 0.8rem;
+            }
+
+            .tabla-reportes th,
+            .tabla-reportes td {
+                padding: 10px;
+            }
+
+            .descripcion-corta {
+                max-width: 150px;
+            }
+
+            .contenedor-paginacion {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de gobierno -->
+    <div class="barra-gobierno">
+        <div class="contenedor-barra">
+            <span>Portal del SENA - Republica de Colombia</span>
+            <div class="accesibilidad">
+                <button class="btn-accesibilidad" aria-label="Alto contraste">
+                    <i class="fas fa-adjust"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header principal -->
+    <header class="header-principal">
+        <div class="contenedor-header">
+            <div class="grupo-izquierdo">
+                <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo" class="logo-header-img">
+                <h1 class="titulo-header">ProyecTwin - Panel del Administrador</h1>
+            </div>
+
+            <div class="grupo-derecho">
+                <img src="/ProyecTwin Daniel/Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
+
+                <div class="notificaciones">
+                    <i class="fas fa-bell"></i> Notificaciones <span>5</span>
+                </div>
+
+                <div class="usuario">
+                    <div class="avatar"><i class="fas fa-user"></i></div>
+                    <span>Admin Principal | Sistema</span>
+                </div>
+
+                <a href="#" class="btn-cerrar-sesion-rojo">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesion
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul class="menu-principal">
+            <li>
+                <a href="dashboard_admin.html" class="enlace-nav">
+                    <div class="icono-nav"><i class="fas fa-home"></i></div>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="gestion_usuarios.html" class="enlace-nav">
+                    <div class="icono-nav"><i class="fas fa-users-cog"></i></div>
+                    Gestion Usuarios
+                </a>
+            </li>
+            <li>
+                <a href="reportes.html" class="enlace-nav">
+                    <div class="icono-nav"><i class="fas fa-chart-bar"></i></div>
+                    Reportes
+                </a>
+            </li>
+            <li>
+                <a href="reportes_fallas.html" class="enlace-nav activo">
+                    <div class="icono-nav"><i class="fas fa-bug"></i></div>
+                    Reportes de Fallas
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="contenido-principal">
+        <div class="contenedor-gestion">
+            <!-- Encabezado de pagina -->
+            <div class="encabezado-pagina">
+                <h1 class="titulo-pagina">
+                    <i class="fas fa-bug"></i> Reportes de Fallas
+                </h1>
+            </div>
+
+            <!-- Seccion de Filtros -->
+            <section class="seccion-reporte">
+                <h2 class="titulo-seccion">
+                    <i class="fas fa-filter"></i> Filtros de Busqueda
+                </h2>
+                <div class="contenedor-filtros">
+                    <div class="formulario-filtros">
+                        <div class="grupo-campo">
+                            <label for="filtroEstado"><i class="fas fa-tag"></i> Estado</label>
+                            <select id="filtroEstado">
+                                <option value="">Todos los estados</option>
+                                <option value="pendiente">Pendiente</option>
+                                <option value="en_proceso">En Proceso</option>
+                                <option value="resuelto">Resuelto</option>
+                                <option value="cerrado">Cerrado</option>
+                            </select>
+                        </div>
+
+                        <div class="grupo-campo">
+                            <label for="filtroFecha"><i class="fas fa-calendar"></i> Fecha</label>
+                            <input type="date" id="filtroFecha" />
+                        </div>
+
+                        <div class="grupo-campo">
+                            <label for="filtroUsuario"><i class="fas fa-user"></i> Buscar por usuario</label>
+                            <input type="text" id="filtroUsuario" placeholder="Nombre o correo del usuario" />
+                        </div>
+
+                        <div class="grupo-campo">
+                            <div class="botones-filtros">
+                                <button class="btn-filtrar" id="btnFiltrar">
+                                    <i class="fas fa-search"></i> Buscar
+                                </button>
+                                <button class="btn-limpiar" id="btnLimpiar">
+                                    <i class="fas fa-eraser"></i> Limpiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seccion de estadisticas -->
+            <section class="seccion-reporte">
+                <h2 class="titulo-seccion">
+                    <i class="fas fa-chart-pie"></i> Resumen de Reportes
+                </h2>
+                <div class="grid-stats">
+                    <div class="card-stat">
+                        <div class="icono-card icono-card-1">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="info-card">
+                            <h3>Pendientes</h3>
+                            <div class="valor-stat">12</div>
+                            <p class="detalle-stat">Requieren atencion inmediata</p>
+                        </div>
+                    </div>
+
+                    <div class="card-stat">
+                        <div class="icono-card icono-card-2">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+                        <div class="info-card">
+                            <h3>En Proceso</h3>
+                            <div class="valor-stat">5</div>
+                            <p class="detalle-stat">Siendo atendidos actualmente</p>
+                        </div>
+                    </div>
+
+                    <div class="card-stat">
+                        <div class="icono-card icono-card-3">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="info-card">
+                            <h3>Resueltos</h3>
+                            <div class="valor-stat">28</div>
+                            <p class="detalle-stat">Fallas solucionadas</p>
+                        </div>
+                    </div>
+
+                    <div class="card-stat">
+                        <div class="icono-card icono-card-4">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="info-card">
+                            <h3>Total Reportes</h3>
+                            <div class="valor-stat">45</div>
+                            <p class="detalle-stat">Reportes registrados</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seccion: Tabla de Reportes de Fallas -->
+            <section class="seccion-reporte">
+                <h2 class="titulo-seccion">
+                    <i class="fas fa-list-alt"></i> Listado de Reportes
+                </h2>
+                <div class="contenedor-tabla">
+                    <div class="encabezado-tabla">
+                        <h3 class="titulo-tabla">
+                            <i class="fas fa-table"></i> Reportes de Fallas
+                        </h3>
+                        <span class="total-registros">Mostrando 6 de 45 reportes</span>
+                    </div>
+
+                    <table class="tabla-reportes">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Usuario</th>
+                                <th>Descripcion</th>
+                                <th>Estado</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Carlos Rodriguez Diaz</td>
+                                <td class="descripcion-corta" title="Error al cargar la pagina de dashboard, muestra pantalla blanca despues de iniciar sesion">Error al cargar la pagina de dashboard, muestra pantalla blanca despues de iniciar sesion</td>
+                                <td><span class="badge-estado badge-pendiente"><i class="fas fa-clock"></i> Pendiente</span></td>
+                                <td>12/04/2026</td>
+                                <td>
+                                    <div class="acciones-tabla">
+                                        <button class="btn-accion-tabla btn-ver" title="Ver detalle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-accion-tabla btn-cambiar-estado" title="Cambiar estado">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>Maria Gonzalez Torres</td>
+                                <td class="descripcion-corta" title="No se pueden subir archivos PDF en la seccion de evidencias del proyecto">No se pueden subir archivos PDF en la seccion de evidencias del proyecto</td>
+                                <td><span class="badge-estado badge-pendiente"><i class="fas fa-clock"></i> Pendiente</span></td>
+                                <td>11/04/2026</td>
+                                <td>
+                                    <div class="acciones-tabla">
+                                        <button class="btn-accion-tabla btn-ver" title="Ver detalle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-accion-tabla btn-cambiar-estado" title="Cambiar estado">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>Andres Martinez Lopez</td>
+                                <td class="descripcion-corta" title="El sistema no envia notificaciones cuando un instructor revisa un avance">El sistema no envia notificaciones cuando un instructor revisa un avance</td>
+                                <td><span class="badge-estado badge-en-proceso"><i class="fas fa-cog"></i> En Proceso</span></td>
+                                <td>10/04/2026</td>
+                                <td>
+                                    <div class="acciones-tabla">
+                                        <button class="btn-accion-tabla btn-ver" title="Ver detalle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-accion-tabla btn-cambiar-estado" title="Cambiar estado">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>Laura Sanchez Perez</td>
+                                <td class="descripcion-corta" title="El boton de cerrar sesion no funciona correctamente en navegador Chrome">El boton de cerrar sesion no funciona correctamente en navegador Chrome</td>
+                                <td><span class="badge-estado badge-en-proceso"><i class="fas fa-cog"></i> En Proceso</span></td>
+                                <td>09/04/2026</td>
+                                <td>
+                                    <div class="acciones-tabla">
+                                        <button class="btn-accion-tabla btn-ver" title="Ver detalle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-accion-tabla btn-cambiar-estado" title="Cambiar estado">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>Diego Ramirez Castro</td>
+                                <td class="descripcion-corta" title="Error en la generacion de reportes PDF, el archivo descargado esta corrupto">Error en la generacion de reportes PDF, el archivo descargado esta corrupto</td>
+                                <td><span class="badge-estado badge-resuelto"><i class="fas fa-check"></i> Resuelto</span></td>
+                                <td>08/04/2026</td>
+                                <td>
+                                    <div class="acciones-tabla">
+                                        <button class="btn-accion-tabla btn-ver" title="Ver detalle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-accion-tabla btn-cambiar-estado" title="Cambiar estado">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>6</td>
+                                <td>Patricia Morales Vega</td>
+                                <td class="descripcion-corta" title="Las imagenes de los logos de proyectos no se muestran en la vista de lista">Las imagenes de los logos de proyectos no se muestran en la vista de lista</td>
+                                <td><span class="badge-estado badge-cerrado"><i class="fas fa-lock"></i> Cerrado</span></td>
+                                <td>05/04/2026</td>
+                                <td>
+                                    <div class="acciones-tabla">
+                                        <button class="btn-accion-tabla btn-ver" title="Ver detalle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-accion-tabla btn-cambiar-estado" title="Cambiar estado">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Paginacion -->
+                    <div class="contenedor-paginacion">
+                        <span class="info-paginacion">Mostrando 1 - 6 de 45 reportes</span>
+                        <div class="paginacion">
+                            <button class="btn-pagina" disabled title="Anterior">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="btn-pagina activo">1</button>
+                            <button class="btn-pagina">2</button>
+                            <button class="btn-pagina">3</button>
+                            <button class="btn-pagina">4</button>
+                            <button class="btn-pagina">5</button>
+                            <button class="btn-pagina">6</button>
+                            <button class="btn-pagina">7</button>
+                            <button class="btn-pagina" title="Siguiente">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="pie-pagina">
+                <div class="contenedor-pie">
+                    <div class="seccion-pie">
+                        <h3>ProyecTwin SENA</h3>
+                        <p>
+                            Sistema de gestion y deteccion de similitudes para proyectos de formacion.
+                        </p>
+                    </div>
+                    <div class="seccion-pie">
+                        <h3>Enlaces Rapidos</h3>
+                        <ul class="enlaces-pie">
+                            <li>
+                                <a href="dashboard_admin.html"><i class="fas fa-home"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="gestion_usuarios.html"><i class="fas fa-users-cog"></i> Gestion Usuarios</a>
+                            </li>
+                            <li>
+                                <a href="reportes.html"><i class="fas fa-chart-bar"></i> Reportes</a>
+                            </li>
+                            <li>
+                                <a href="reportes_fallas.html"><i class="fas fa-bug"></i> Reportes de Fallas</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="seccion-pie">
+                        <h3>Contacto</h3>
+                        <div class="info-contacto">
+                            <p><i class="fas fa-phone"></i> 3235421165</p>
+                            <p><i class="fas fa-envelope"></i> sena@correo.edu.co</p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> Centro de Formacion SENA
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="derechos-autor">
+                    <p>&copy; 2026 ProyecTwin SENA. Todos los derechos reservados.</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        // Boton Filtrar
+        document.getElementById('btnFiltrar').addEventListener('click', function() {
+            const estado = document.getElementById('filtroEstado').value;
+            const fecha = document.getElementById('filtroFecha').value;
+            const usuario = document.getElementById('filtroUsuario').value;
+            alert('Filtrando por:\nEstado: ' + (estado || 'Todos') + '\nFecha: ' + (fecha || 'Todas') + '\nUsuario: ' + (usuario || 'Todos'));
+        });
+
+        // Boton Limpiar Filtros
+        document.getElementById('btnLimpiar').addEventListener('click', function() {
+            document.getElementById('filtroEstado').value = '';
+            document.getElementById('filtroFecha').value = '';
+            document.getElementById('filtroUsuario').value = '';
+        });
+    </script>
+</body>
+</html>

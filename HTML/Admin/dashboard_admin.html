@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Administrador ProyecTwin</title>
+    <link rel="stylesheet" href="/CSS/Global CSS/global.css" />
+    <link rel="stylesheet" href="/CSS/CSS Paginas/dashboard_admin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <!-- Barra de gobierno -->
+    <div class="barra-gobierno">
+        <div class="contenedor-barra">
+            <span>Portal del SENA - República de Colombia</span>
+            <div class="accesibilidad">
+                <button class="btn-accesibilidad" aria-label="Alto contraste">
+                    <i class="fas fa-adjust"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header principal -->
+    <header class="header-principal">
+        <div class="contenedor-header">
+            <div class="grupo-izquierdo">
+                <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo" class="logo-header-img">
+                <h1 class="titulo-header">ProyecTwin - Panel del Administrador</h1>
+            </div>
+
+            <div class="grupo-derecho">
+                <img src="/ProyecTwin Daniel/Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
+
+                <div class="notificaciones">
+                    <i class="fas fa-bell"></i> Notificaciones <span>5</span>
+                </div>
+
+                <div class="usuario">
+                    <div class="avatar"><i class="fas fa-user"></i></div>
+                    <span>Admin Principal | Sistema</span>
+                </div>
+
+                <a href="#" class="btn-cerrar-sesion-rojo">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul class="menu-principal">
+            <li>
+                <a href="dashboard_admin.html" class="enlace-nav activo">
+                    <div class="icono-nav"><i class="fas fa-home"></i></div>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="gestion_usuarios.html" class="enlace-nav">
+                    <div class="icono-nav"><i class="fas fa-users-cog"></i></div>
+                    Gestión Usuarios
+                </a>
+            </li>
+            <li>
+                <a href="reportes.html" class="enlace-nav">
+                    <div class="icono-nav"><i class="fas fa-chart-bar"></i></div>
+                    Reportes
+                </a>
+            </li>
+            <li>
+                <a href="reportes_fallas.html" class="enlace-nav">
+                    <div class="icono-nav"><i class="fas fa-bug"></i></div>
+                    Reportes de Fallas
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="contenido-principal">
+        <div class="contenedor-dashboard">
+            <!-- Sección de bienvenida -->
+            <section class="seccion-bienvenida">
+                <div class="tarjeta-bienvenida">
+                    <div class="contenido-bienvenida">
+                        <h2>¡Bienvenido al Panel de Administrador!</h2>
+                        <p>
+                            Gestiona usuarios, programas de formación y mantén el control total del sistema ProyecTwin. Revisa reportes y asegura el correcto funcionamiento de la plataforma.
+                        </p>
+                        <div class="indicadores-rapidos">
+                            <div class="indicador">
+                                <div class="valor-indicador">150</div>
+                                <div class="texto-indicador">Total Usuarios</div>
+                            </div>
+                            <div class="indicador">
+                                <div class="valor-indicador">45</div>
+                                <div class="texto-indicador">Proyectos Activos</div>
+                            </div>
+                            <div class="indicador">
+                                <div class="valor-indicador">3</div>
+                                <div class="texto-indicador">Reportes de Fallas</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ilustracion-bienvenida">
+                        <div class="grafico-circular">
+                            <div class="texto-progreso">100%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de estadísticas generales -->
+            <section class="seccion-estadisticas">
+                <h2 class="titulo-seccion">
+                    <i class="fas fa-chart-line"></i> Estadísticas Generales
+                </h2>
+                <div class="grid-estadisticas">
+                    <div class="tarjeta-estadistica">
+                        <div class="icono-estadistica icono-usuarios">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="info-estadistica">
+                            <h3>Total Usuarios</h3>
+                            <div class="valor-estadistica">150</div>
+                            <p class="detalle-estadistica">Aprendices, Instructores y Admins</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-estadistica">
+                        <div class="icono-estadistica icono-proyectos">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="info-estadistica">
+                            <h3>Total Proyectos</h3>
+                            <div class="valor-estadistica">78</div>
+                            <p class="detalle-estadistica">Activos, pendientes y completados</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-estadistica">
+                        <div class="icono-estadistica icono-instructores">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="info-estadistica">
+                            <h3>Total Instructores</h3>
+                            <div class="valor-estadistica">12</div>
+                            <p class="detalle-estadistica">Instructores activos</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-estadistica">
+                        <div class="icono-estadistica icono-aprendices">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="info-estadistica">
+                            <h3>Total Aprendices</h3>
+                            <div class="valor-estadistica">135</div>
+                            <p class="detalle-estadistica">Aprendices registrados</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-estadistica">
+                        <div class="icono-estadistica icono-programas">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="info-estadistica">
+                            <h3>Programas Activos</h3>
+                            <div class="valor-estadistica">8</div>
+                            <p class="detalle-estadistica">Programas de formación</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-estadistica">
+                        <div class="icono-estadistica icono-similitudes">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="info-estadistica">
+                            <h3>Similitudes Detectadas</h3>
+                            <div class="valor-estadistica">15</div>
+                            <p class="detalle-estadistica">Requieren revisión</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de acciones rápidas -->
+            <section class="seccion-acciones">
+                <h2 class="titulo-seccion">
+                    <i class="fas fa-bolt"></i> Acciones Rápidas
+                </h2>
+                <div class="grid-acciones">
+                    <div class="tarjeta-accion">
+                        <div class="icono-accion">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Usuarios Registrados</h3>
+                        <p>Consulta y administra aprendices, instructores y administradores</p>
+                        <a href="gestion_usuarios.html" class="btn-accion-principal" style="text-decoration:none;">
+                            <i class="fas fa-eye"></i> Ver Usuarios
+                        </a>
+                    </div>
+
+                    <div class="tarjeta-accion">
+                        <div class="icono-accion">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Generar Reportes</h3>
+                        <p>Visualiza estadísticas y exporta informes</p>
+                        <a href="reportes.html" class="btn-accion-principal" style="text-decoration:none;">
+                            <i class="fas fa-file-export"></i> Ver Reportes
+                        </a>
+                    </div>
+
+                    <div class="tarjeta-accion">
+                        <div class="icono-accion">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Generar Reportes</h3>
+                        <p>Visualiza estadísticas y exporta informes</p>
+                        <button class="btn-accion-principal">
+                            <i class="fas fa-file-export"></i> Ver Reportes
+                        </button>
+                    </div>
+
+                    <div class="tarjeta-accion">
+                        <div class="icono-accion">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Reportes de Fallas</h3>
+                        <p>Revisa y gestiona los reportes de errores del sistema</p>
+                        <button class="btn-accion-principal">
+                            <i class="fas fa-wrench"></i> Ver Reportes
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de proyectos recientes -->
+            <section class="seccion-tabla">
+                <div class="encabezado-tabla">
+                    <h3 class="titulo-tabla">
+                        <i class="fas fa-folder-open"></i> Proyectos Recientes
+                    </h3>
+                    <a href="reportes.html" class="enlace-ver-todo">
+                        Ver todos <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="contenedor-tabla">
+                    <table class="tabla-usuarios">
+                        <thead>
+                            <tr>
+                                <th>Proyecto</th>
+                                <th>Creador</th>
+                                <th>Fecha</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="info-usuario">
+                                        <div class="avatar-tabla"><i class="fas fa-microchip"></i></div>
+                                        <div>
+                                            <strong>Sistema IoT para Agricultura</strong>
+                                            <span class="telefono-usuario">Monitoreo inteligente de cultivos</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Ana Martínez</td>
+                                <td>15 Nov 2023</td>
+                                <td><span class="estado estado-activo"><i class="fas fa-circle"></i> Activo</span></td>
+                                <td>
+                                    <div class="acciones-tabla">
+                                        <button class="btn-accion-tabla btn-ver" title="Ver detalle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="info-usuario">
+                                        <div class="avatar-tabla"><i class="fas fa-mobile-alt"></i></div>
+                                        <div>
+                                            <strong>App Móvil para Turismo Local</strong>
+                                            <span class="telefono-usuario">Promoción turística regional</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Juan Pérez</td>
+                                <td>14 Nov 2023</td>
+                                <td><span class="estado estado-pendiente"><i class="fas fa-circle"></i> Pendiente</span></td>
+                                <td>
+                                    <div class="acciones-tabla">
+                                        <button class="btn-accion-tabla btn-ver" title="Ver detalle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="info-usuario">
+                                        <div class="avatar-tabla"><i class="fas fa-laptop-code"></i></div>
+                                        <div>
+                                            <strong>Plataforma de Gestión Académica</strong>
+                                            <span class="telefono-usuario">Sistema integral de gestión</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Carlos Rodríguez</td>
+                                <td>13 Nov 2023</td>
+                                <td><span class="estado estado-activo"><i class="fas fa-circle"></i> Activo</span></td>
+                                <td>
+                                    <div class="acciones-tabla">
+                                        <button class="btn-accion-tabla btn-ver" title="Ver detalle">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sección de alertas recientes -->
+            <section class="seccion-alertas">
+                <div class="encabezado-seccion">
+                    <h2 class="titulo-seccion">
+                        <i class="fas fa-exclamation-triangle"></i> Alertas Recientes
+                    </h2>
+                    <a href="reportes_fallas.html" class="enlace-ver-todo">
+                        Ver todas <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="lista-alertas">
+                    <div class="tarjeta-alerta alerta-urgente">
+                        <div class="contenido-alerta">
+                            <div class="icono-alerta">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="info-alerta">
+                                <h3>Alta Similitud Detectada</h3>
+                                <p>Proyecto "Sistema de Gestión Académica" tiene <strong>65% de similitud</strong> con otro proyecto registrado</p>
+                                <div class="meta-alerta">
+                                    <span class="fecha-alerta"><i class="fas fa-clock"></i> Hace 2 horas</span>
+                                    <button class="btn-alerta-accion">
+                                        <i class="fas fa-search"></i> Revisar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-alerta alerta-advertencia">
+                        <div class="contenido-alerta">
+                            <div class="icono-alerta">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="info-alerta">
+                                <h3>Reporte de Falla - Error en Sistema</h3>
+                                <p>Usuario reporta error al intentar <strong>subir evidencias de progreso</strong></p>
+                                <div class="meta-alerta">
+                                    <span class="fecha-alerta"><i class="fas fa-clock"></i> Hace 5 horas</span>
+                                    <button class="btn-alerta-accion">
+                                        <i class="fas fa-wrench"></i> Gestionar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-alerta alerta-informativa">
+                        <div class="contenido-alerta">
+                            <div class="icono-alerta">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="info-alerta">
+                                <h3>Nuevo Usuario Registrado</h3>
+                                <p>Se ha registrado un <strong>nuevo aprendiz</strong> en el sistema</p>
+                                <div class="meta-alerta">
+                                    <span class="fecha-alerta"><i class="fas fa-clock"></i> Hace 1 día</span>
+                                    <button class="btn-alerta-accion">
+                                        <i class="fas fa-user-check"></i> Verificar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="pie-pagina">
+                <div class="contenedor-pie">
+                    <div class="seccion-pie">
+                        <h3>ProyecTwin SENA</h3>
+                        <p>
+                            Sistema de gestión y detección de similitudes para proyectos de formación.
+                        </p>
+                    </div>
+                    <div class="seccion-pie">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul class="enlaces-pie">
+                            <li>
+                                <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-users-cog"></i> Gestión Usuarios</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-chart-bar"></i> Reportes</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-bug"></i> Reportes de Fallas</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="seccion-pie">
+                        <h3>Contacto</h3>
+                        <div class="info-contacto">
+                            <p><i class="fas fa-phone"></i> 3235421165</p>
+                            <p><i class="fas fa-envelope"></i> sena@correo.edu.co</p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> Centro de Formación SENA
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="derechos-autor">
+                    <p>&copy; 2023 ProyecTwin SENA. Todos los derechos reservados.</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
