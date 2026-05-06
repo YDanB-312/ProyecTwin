@@ -10,6 +10,11 @@ html, body {
     background: #f0f9ff;
 }
 
+/* Sobreescribir global.css para páginas de auth */
+body {
+    display: block !important;
+}
+
 /* Contenedor centrado */
 .contenedor-login {
     display: flex;
@@ -329,17 +334,7 @@ html, body {
     border-top: 1px solid #e0f2f7;
 }
 
-.pie-pagina-login .contenedor-pie {
-    max-width: 860px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.pie-pagina-login .info-contacto {
+.pie-pagina-login .pie-pagina-login .info-contacto {
     display: flex;
     gap: 14px;
 }
@@ -398,12 +393,7 @@ html, body {
         display: none;
     }
 
-    .pie-pagina-login .contenedor-pie {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .pie-pagina-login .info-contacto {
+    .pie-pagina-login .pie-pagina-login .info-contacto {
         flex-direction: column;
         gap: 4px;
     }

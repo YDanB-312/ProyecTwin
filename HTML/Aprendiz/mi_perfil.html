@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Perfil - ProyecTwin</title>
-    <link rel="stylesheet" href="/CSS/Global CSS/global.css" />
-    <link rel="stylesheet" href="/CSS/CSS Paginas/mi_perfil.css" />
+    <link rel="stylesheet" href="../../CSS/global-css/global.css" />
+    <link rel="stylesheet" href="../../CSS/css-pages/mi_perfil.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -28,12 +28,12 @@
      <header class="header-principal">
     <div class="contenedor-header">
         <div class="grupo-izquierdo">
-            <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo" class="logo-header-img">
+            <img src="../../Imagenes/Logo-ProyecTwin.png" alt="Logo" class="logo-header-img">
             <h1 class="titulo-header">ProyecTwin - Panel del Aprendiz</h1>
         </div>
         
         <div class="grupo-derecho">
-            <img src="/ProyecTwin Daniel/Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
+            <img src="../../Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
             
             <div class="notificaciones">
                 <i class="fas fa-bell"></i> Notificaciones <span>5</span>
@@ -44,7 +44,7 @@
                 <span>María González | ADSO</span>
             </div>
 
-            <a href="#" class="btn-cerrar-sesion-rojo">
+            <a href="../../Login/login.html" class="btn-cerrar-sesion-rojo">
                 <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
             </a>
         </div>
@@ -64,13 +64,13 @@
         <li>
           <a href="Mis_proyectos.html" class="enlace-nav"
             ><div class="icono-nav"><i class="fas fa-folder-open"></i></div>
-            Mis Proyectos</a
+            Mis proyectos</a
           >
         </li>
         <li>
           <a href="nuevo_proyecto.html" class="enlace-nav"
             ><div class="icono-nav"><i class="fas fa-plus-circle"></i></div>
-            Nuevo Proyecto</a
+            Nuevo proyecto</a
           >
         </li>
         <li>
@@ -115,7 +115,7 @@
             <i class="fas fa-user-cog"></i> Mi Perfil
           </h1>
           <p class="descripcion-pagina">
-            Gestiona tu información personal, preferencias y configuración de
+            Gesti�na tu información personal, preferencias y configuración de
             cuenta
           </p>
         </div>
@@ -132,13 +132,13 @@
             </div>
             <h2 class="nombre-usuario">María González</h2>
             <p class="rol-usuario">
-              Aprendiz - Análisis y Desarrollo de Software
+              Aprendiz - Análisis y desarrollo de Software
             </p>
 
             <div class="estadisticas-perfil">
               <div class="estadistica">
                 <span class="valor-estadistica">3</span>
-                <span class="etiqueta-estadistica">Proyectos</span>
+                <span class="etiqueta-estadistica">proyectos</span>
               </div>
               <div class="estadistica">
                 <span class="valor-estadistica">12</span>
@@ -238,11 +238,11 @@
                   >
                   <select id="programa" class="select" required>
                     <option value="adso">
-                      Análisis y Desarrollo de Software
+                      Análisis y desarrollo de Software
                     </option>
                     <option value="sistemas">Tecnología en Sistemas</option>
                     <option value="multimedia">
-                      Diseño y Desarrollo Multimedia
+                      Diseño y desarrollo Multimedia
                     </option>
                     <option value="redes">Tecnología en Redes</option>
                   </select>
@@ -360,41 +360,27 @@
                   </select>
                 </div>
 
-                <div class="grupo-formulario">
-                  <label class="etiqueta">Notificaciones</label>
-                  <div
-                    style="
-                      display: flex;
-                      flex-direction: column;
-                      gap: 10px;
-                      margin-top: 10px;
-                    "
-                  >
-                    <label
-                      style="display: flex; align-items: center; gap: 10px"
-                    >
-                      <input type="checkbox" checked />
-                      Alertas de similitud de proyectos
-                    </label>
-                    <label
-                      style="display: flex; align-items: center; gap: 10px"
-                    >
-                      <input type="checkbox" checked />
-                      Comentarios de instructores
-                    </label>
-                    <label
-                      style="display: flex; align-items: center; gap: 10px"
-                    >
-                      <input type="checkbox" />
-                      Recordatorios de avances
-                    </label>
-                    <label
-                      style="display: flex; align-items: center; gap: 10px"
-                    >
-                      <input type="checkbox" checked />
-                      Noticias y actualizaciones del sistema
-                    </label>
-                  </div>
+                 <div class="grupo-formulario">
+                   <label class="etiqueta">Notificaciones</label>
+                   <div class="checkbox-container">
+                     <label class="checkbox-item">
+                       <input type="checkbox" checked />
+                       Alertas de similitud de proyectos
+                     </label>
+                     <label class="checkbox-item">
+                       <input type="checkbox" checked />
+                       Comentarios de instructores
+                     </label>
+                     <label class="checkbox-item">
+                       <input type="checkbox" />
+                       Recordatorios de avances
+                     </label>
+                     <label class="checkbox-item">
+                       <input type="checkbox" checked />
+                       Noticias y actualizaciones del sistema
+                     </label>
+                   </div>
+                 </div>
                 </div>
 
                 <button type="submit" class="btn-primario">
@@ -425,7 +411,7 @@
                 </li>
                 <li>
                   <a href="Mis_proyectos.html"
-                    ><i class="fas fa-folder-open"></i> Mis Proyectos</a
+                    ><i class="fas fa-folder-open"></i> Mis proyectos</a
                   >
                 </li>
                 <li>

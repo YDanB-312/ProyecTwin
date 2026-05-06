@@ -1,0 +1,447 @@
+/* ========================================
+   INDEX - Página de Inicio (Landing Page)
+   ======================================== */
+
+/* Sobreescribir body para landing page sin sidebar */
+body {
+    display: block !important;
+}
+
+/* Header estilo landing */
+.header-principal {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-header {
+    color: var(--color-primario);
+}
+
+/* Navegación */
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background: var(--color-fondo);
+    color: var(--color-primario);
+}
+
+/* Botones de autenticación */
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-left: 20px;
+}
+
+.btn-ingresar {
+    background: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-ingresar:hover {
+    background: var(--color-secundario);
+    transform: translateY(-2px);
+}
+
+.btn-registrarme {
+    background: white;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-registrarme:hover {
+    background: var(--color-fondo);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+   ======================================== */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Contenido principal sin sidebar */
+.contenido-principal {
+    margin-left: 0 !important;
+    margin-top: 90px;
+    min-height: calc(100vh - 200px);
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto !important;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-titulo {
+    color: var(--color-texto);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-titulo span {
+    color: var(--color-primario);
+}
+
+.hero-descripcion {
+    color: var(--color-texto-claro);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+.hero-botones {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.hero-botones .btn-ingresar,
+.hero-botones .btn-registrarme {
+    font-size: 1rem;
+    padding: 12px 30px;
+}
+
+/* ========================================
+   TARJETAS DE CARACTERÍSTICAS
+   ======================================== */
+.tarjetas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.tarjeta {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 175, 0, 0.15);
+}
+
+.tarjeta-icono {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tarjeta-icono i {
+    font-size: 1.5rem;
+}
+
+.tarjeta-icono-buscar {
+    background: rgba(0, 175, 0, 0.1);
+}
+
+.tarjeta-icono-buscar i {
+    color: var(--color-primario);
+}
+
+.tarjeta-icono-gestionar {
+    background: rgba(22, 138, 69, 0.1);
+}
+
+.tarjeta-icono-gestionar i {
+    color: #168A45;
+}
+
+.tarjeta-icono-seguimiento {
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.tarjeta-icono-seguimiento i {
+    color: var(--color-exito);
+}
+
+.tarjeta-titulo {
+    color: var(--color-texto);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.tarjeta-texto {
+    color: var(--color-texto-claro);
+    line-height: 1.6;
+}
+
+/* ========================================
+   SECCIÓN ESTADÍSTICAS
+   ======================================== */
+.estadisticas-section {
+    background: linear-gradient(135deg, #168A45, #0b4720);
+    padding: 50px 40px;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.estadisticas-titulo {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.estadisticas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.estadistica-numero {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.estadistica-label {
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   LLAMADO A LA ACCIÓN
+   ======================================== */
+.cta-section {
+    text-align: center;
+    background: var(--color-fondo);
+    padding: 40px;
+    border-radius: 12px;
+    border: 2px solid var(--color-borde);
+}
+
+.cta-titulo {
+    color: var(--color-texto);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.cta-titulo i {
+    color: var(--color-primario);
+    margin-right: 10px;
+}
+
+.cta-texto {
+    color: var(--color-texto-claro);
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   SECCIÓN: TIPOS DE USUARIO
+   ======================================== */
+.usuarios-section {
+    margin-bottom: 60px;
+}
+
+.usuarios-titulo {
+    text-align: center;
+    color: var(--color-texto);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.usuarios-subtitulo {
+    text-align: center;
+    color: var(--color-texto-claro);
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+.usuarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-usuario {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border-top: 4px solid transparent;
+}
+
+.tarjeta-usuario:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 175, 0, 0.15);
+}
+
+.tarjeta-usuario.aprendiz {
+    border-top-color: #2563eb;
+}
+
+.tarjeta-usuario.instructor {
+    border-top-color: #a855f7;
+}
+
+.tarjeta-usuario.admin {
+    border-top-color: #ef4444;
+}
+
+.tarjeta-usuario-icono {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.tarjeta-usuario.aprendiz .tarjeta-usuario-icono {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.tarjeta-usuario.instructor .tarjeta-usuario-icono {
+    background: rgba(168, 85, 247, 0.1);
+}
+
+.tarjeta-usuario.admin .tarjeta-usuario-icono {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.tarjeta-usuario-icono i {
+    font-size: 1.8rem;
+}
+
+.tarjeta-usuario.aprendiz .tarjeta-usuario-icono i {
+    color: #2563eb;
+}
+
+.tarjeta-usuario.instructor .tarjeta-usuario-icono i {
+    color: #a855f7;
+}
+
+.tarjeta-usuario.admin .tarjeta-usuario-icono i {
+    color: #ef4444;
+}
+
+.tarjeta-usuario h3 {
+    color: var(--color-texto);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.tarjeta-usuario p {
+    color: var(--color-texto-claro);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.tarjeta-usuario ul {
+    list-style: none;
+    text-align: left;
+}
+
+.tarjeta-usuario ul li {
+    padding: 8px 0;
+    color: var(--color-texto-claro);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tarjeta-usuario ul li i {
+    color: var(--color-primario);
+    font-size: 0.8rem;
+}
+
+/* ========================================
+   SECCIÓN: CÓMO FUNCIONA
+   ======================================== */
+.como-funciona {
+    margin-bottom: 60px;
+}
+
+.como-funciona-titulo {
+    text-align: center;
+    color: var(--color-texto);
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+
+.pasos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.paso {
+    text-align: center;
+    padding: 20px;
+}
+
+.paso-numero {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primario);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 auto 15px;
+}
+
+.paso h4 {
+    color: var(--color-texto);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.paso p {
+    color: var(--color-texto-claro);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}

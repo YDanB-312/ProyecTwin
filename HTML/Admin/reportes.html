@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reportes y Estadísticas - Administrador ProyecTwin</title>
-    <link rel="stylesheet" href="/CSS/Global CSS/global.css" />
-    <link rel="stylesheet" href="/CSS/CSS Paginas/reportes.css" />
+    <title>reportes y Estadísticas - Administrador ProyecTwin</title>
+    <link rel="stylesheet" href="../../CSS/global-css/global.css" />
+    <link rel="stylesheet" href="../../CSS/css-pages/reportes.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-        /* Contenedor de gestion */
-        .contenedor-gestion {
+        /* Contenedor de Gesti�n */
+        .contenedor-Gesti�n {
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
@@ -567,12 +567,12 @@
     <header class="header-principal">
         <div class="contenedor-header">
             <div class="grupo-izquierdo">
-                <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo" class="logo-header-img">
+                <img src="../../Imagenes/Logo-ProyecTwin.png" alt="Logo" class="logo-header-img">
                 <h1 class="titulo-header">ProyecTwin - Panel del Administrador</h1>
             </div>
 
             <div class="grupo-derecho">
-                <img src="/ProyecTwin Daniel/Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
+                <img src="../../Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
 
                 <div class="notificaciones">
                     <i class="fas fa-bell"></i> Notificaciones <span>5</span>
@@ -583,8 +583,8 @@
                     <span>Admin Principal | Sistema</span>
                 </div>
 
-                <a href="#" class="btn-cerrar-sesion-rojo">
-                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesion
+                <a href="../../Login/login.html" class="btn-cerrar-sesion-rojo">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesi�n
                 </a>
             </div>
         </div>
@@ -602,19 +602,19 @@
             <li>
                 <a href="gestion_usuarios.html" class="enlace-nav">
                     <div class="icono-nav"><i class="fas fa-users-cog"></i></div>
-                    Gestion Usuarios
+                    Gesti�n Usuarios
                 </a>
             </li>
             <li>
                 <a href="reportes.html" class="enlace-nav activo">
                     <div class="icono-nav"><i class="fas fa-chart-bar"></i></div>
-                    Reportes
+                    reportes
                 </a>
             </li>
             <li>
                 <a href="reportes_fallas.html" class="enlace-nav">
                     <div class="icono-nav"><i class="fas fa-bug"></i></div>
-                    Reportes de Fallas
+                    reportes de Fallas
                 </a>
             </li>
         </ul>
@@ -622,11 +622,11 @@
 
     <!-- Contenido principal -->
     <main class="contenido-principal">
-        <div class="contenedor-gestion">
+        <div class="contenedor-Gesti�n">
             <!-- Encabezado de pagina -->
             <div class="encabezado-pagina">
                 <h1 class="titulo-pagina">
-                    <i class="fas fa-chart-bar"></i> Reportes y Estadisticas
+                    <i class="fas fa-chart-bar"></i> reportes y Estadisticas
                 </h1>
             </div>
 
@@ -652,7 +652,7 @@
                             <i class="fas fa-project-diagram"></i>
                         </div>
                         <div class="info-card">
-                            <h3>Total Proyectos</h3>
+                            <h3>Total proyectos</h3>
                             <div class="valor-stat">78</div>
                             <p class="detalle-stat">Registrados en el sistema</p>
                         </div>
@@ -663,7 +663,7 @@
                             <i class="fas fa-check-circle"></i>
                         </div>
                         <div class="info-card">
-                            <h3>Proyectos Aprobados</h3>
+                            <h3>proyectos Aprobados</h3>
                             <div class="valor-stat">45</div>
                             <p class="detalle-stat">58% del total</p>
                         </div>
@@ -674,7 +674,7 @@
                             <i class="fas fa-times-circle"></i>
                         </div>
                         <div class="info-card">
-                            <h3>Proyectos Rechazados</h3>
+                            <h3>proyectos Rechazados</h3>
                             <div class="valor-stat">12</div>
                             <p class="detalle-stat">15% del total</p>
                         </div>
@@ -704,17 +704,17 @@
                 </div>
             </section>
 
-            <!-- Seccion: Proyectos por Estado -->
+            <!-- Seccion: proyectos por Estado -->
             <section class="seccion-reporte">
                 <h2 class="titulo-seccion">
-                    <i class="fas fa-folder-open"></i> Proyectos por Estado
+                    <i class="fas fa-folder-open"></i> proyectos por Estado
                 </h2>
                 <div class="contenedor-grafico">
                     <div class="grafico-barras">
                         <div class="barra-item">
                             <span class="barra-etiqueta">Activo</span>
                             <div class="barra-contenedor">
-                                <div class="barra-relleno barra-activo" style="width: 70%;">70%</div>
+                                <div class="barra-relleno barra-activo">70%</div>
                             </div>
                             <span class="barra-cantidad">55</span>
                         </div>
@@ -722,7 +722,7 @@
                         <div class="barra-item">
                             <span class="barra-etiqueta">Pendiente</span>
                             <div class="barra-contenedor">
-                                <div class="barra-relleno barra-pendiente" style="width: 35%;">35%</div>
+                                <div class="barra-relleno barra-pendiente">35%</div>
                             </div>
                             <span class="barra-cantidad">27</span>
                         </div>
@@ -730,7 +730,7 @@
                         <div class="barra-item">
                             <span class="barra-etiqueta">Aprobado</span>
                             <div class="barra-contenedor">
-                                <div class="barra-relleno barra-aprobado" style="width: 58%;">58%</div>
+                                <div class="barra-relleno barra-aprobado">58%</div>
                             </div>
                             <span class="barra-cantidad">45</span>
                         </div>
@@ -738,7 +738,7 @@
                         <div class="barra-item">
                             <span class="barra-etiqueta">Rechazado</span>
                             <div class="barra-contenedor">
-                                <div class="barra-relleno barra-rechazado" style="width: 15%;">15%</div>
+                                <div class="barra-relleno barra-rechazado">15%</div>
                             </div>
                             <span class="barra-cantidad">12</span>
                         </div>
@@ -746,7 +746,7 @@
                         <div class="barra-item">
                             <span class="barra-etiqueta">Completado</span>
                             <div class="barra-contenedor">
-                                <div class="barra-relleno barra-completado" style="width: 45%;">45%</div>
+                                <div class="barra-relleno barra-completado">45%</div>
                             </div>
                             <span class="barra-cantidad">35</span>
                         </div>
@@ -771,8 +771,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Proyecto 1</th>
-                                <th>Proyecto 2</th>
+                                <th>proyecto 1</th>
+                                <th>proyecto 2</th>
                                 <th>Porcentaje</th>
                                 <th>Fecha</th>
                                 <th>Acciones</th>
@@ -781,7 +781,7 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Sistema de Gestion Academica</td>
+                                <td>Sistema de Gesti�n Academica</td>
                                 <td>Plataforma Educativa SENA</td>
                                 <td><span class="badge-porcentaje badge-alto">85%</span></td>
                                 <td>10/04/2026</td>
@@ -886,7 +886,7 @@
                         </div>
                         <div class="info-instructor">
                             <h4>Carlos Rodriguez Diaz</h4>
-                            <p>Desarrollo de Software</p>
+                            <p>desarrollo de Software</p>
                         </div>
                         <div class="revisiones-count">
                             <div class="numero">45</div>
@@ -901,7 +901,7 @@
                         </div>
                         <div class="info-instructor">
                             <h4>Maria Gonzalez Torres</h4>
-                            <p>Analisis y Desarrollo de Software</p>
+                            <p>Analisis y desarrollo de Software</p>
                         </div>
                         <div class="revisiones-count">
                             <div class="numero">38</div>
@@ -931,7 +931,7 @@
                         </div>
                         <div class="info-instructor">
                             <h4>Laura Sanchez Perez</h4>
-                            <p>Desarrollo de Software</p>
+                            <p>desarrollo de Software</p>
                         </div>
                         <div class="revisiones-count">
                             <div class="numero">28</div>
@@ -961,7 +961,7 @@
                         </div>
                         <div class="info-instructor">
                             <h4>Patricia Morales Vega</h4>
-                            <p>Desarrollo de Medios Audiovisuales</p>
+                            <p>desarrollo de Medios Audiovisuales</p>
                         </div>
                         <div class="revisiones-count">
                             <div class="numero">18</div>
@@ -987,7 +987,7 @@
                     <div class="seccion-pie">
                         <h3>ProyecTwin SENA</h3>
                         <p>
-                            Sistema de gestion y deteccion de similitudes para proyectos de formacion.
+                            Sistema de Gesti�n y deteccion de similitudes para proyectos de formacion.
                         </p>
                     </div>
                     <div class="seccion-pie">
@@ -997,13 +997,13 @@
                                 <a href="dashboard_admin.html"><i class="fas fa-home"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="gestion_usuarios.html"><i class="fas fa-users-cog"></i> Gestion Usuarios</a>
+                                <a href="gestion_usuarios.html"><i class="fas fa-users-cog"></i> Gesti�n Usuarios</a>
                             </li>
                             <li>
-                                <a href="reportes.html"><i class="fas fa-chart-bar"></i> Reportes</a>
+                                <a href="reportes.html"><i class="fas fa-chart-bar"></i> reportes</a>
                             </li>
                             <li>
-                                <a href="reportes_fallas.html"><i class="fas fa-bug"></i> Reportes de Fallas</a>
+                                <a href="reportes_fallas.html"><i class="fas fa-bug"></i> reportes de Fallas</a>
                             </li>
                         </ul>
                     </div>

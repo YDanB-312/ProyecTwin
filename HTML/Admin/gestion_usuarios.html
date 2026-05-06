@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Usuarios - Administrador ProyecTwin</title>
-    <link rel="stylesheet" href="/CSS/Global CSS/global.css" />
-    <link rel="stylesheet" href="/CSS/CSS Paginas/gestion_usuarios.css" />
+    <link rel="stylesheet" href="../../CSS/global-css/global.css" />
+    <link rel="stylesheet" href="../../CSS/css-pages/gestion_usuarios.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
@@ -25,12 +25,12 @@
     <header class="header-principal">
         <div class="contenedor-header">
             <div class="grupo-izquierdo">
-                <img src="/ProyecTwin Daniel/Imagenes/Logo ProyecTwin.png" alt="Logo" class="logo-header-img">
+                <img src="../../Imagenes/Logo-ProyecTwin.png" alt="Logo" class="logo-header-img">
                 <h1 class="titulo-header">ProyecTwin - Panel del Administrador</h1>
             </div>
 
             <div class="grupo-derecho">
-                <img src="/ProyecTwin Daniel/Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
+                <img src="../../Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
 
                 <div class="notificaciones">
                     <i class="fas fa-bell"></i> Notificaciones <span>5</span>
@@ -41,7 +41,7 @@
                     <span>Admin Principal | Sistema</span>
                 </div>
 
-                <a href="#" class="btn-cerrar-sesion-rojo">
+                <a href="../../Login/login.html" class="btn-cerrar-sesion-rojo">
                     <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
                 </a>
             </div>
@@ -66,13 +66,13 @@
             <li>
                 <a href="reportes.html" class="enlace-nav">
                     <div class="icono-nav"><i class="fas fa-chart-bar"></i></div>
-                    Reportes
+                    reportes
                 </a>
             </li>
             <li>
                 <a href="reportes_fallas.html" class="enlace-nav">
                     <div class="icono-nav"><i class="fas fa-bug"></i></div>
-                    Reportes de Fallas
+                    reportes de Fallas
                 </a>
             </li>
         </ul>
@@ -83,10 +83,15 @@
         <div class="contenedor-gestion">
             <!-- Encabezado de página -->
             <div class="encabezado-pagina">
-                <h1 class="titulo-pagina">
-                    <i class="fas fa-users-cog"></i> Gestión de Usuarios
-                </h1>
-                <p class="subtitulo-pagina">Administra los usuarios registrados en la plataforma</p>
+                <div>
+                    <h1 class="titulo-pagina">
+                        <i class="fas fa-users-cog"></i> Gestión de Usuarios
+                    </h1>
+                    <p class="subtitulo-pagina">Administra los usuarios registrados en la plataforma</p>
+                </div>
+                <button class="btn-nuevo-usuario" onclick="document.getElementById('modalUsuario').style.display='flex'">
+                    <i class="fas fa-user-plus"></i> Nuevo Usuario
+                </button>
             </div>
 
             <!-- Filtros -->
@@ -333,6 +338,62 @@
                 </div>
             </section>
 
+            <!-- Modal Nuevo/Editar Usuario -->
+            <div class="modal-overlay" id="modalUsuario">
+                <div class="modal-contenido">
+                    <div class="modal-encabezado">
+                        <h2><i class="fas fa-user-plus"></i> Nuevo Usuario</h2>
+                        <button class="btn-cerrar-modal" onclick="document.getElementById('modalUsuario').style.display='none'">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-cuerpo">
+                        <form class="formulario-grid">
+                            <div class="grupo-campo">
+                                <label for="nombre">Nombre Completo <span class="requerido">*</span></label>
+                                <input type="text" id="nombre" placeholder="Ej: Juan Pérez">
+                            </div>
+                            <div class="grupo-campo">
+                                <label for="documento">Documento <span class="requerido">*</span></label>
+                                <input type="text" id="documento" placeholder="Ej: 1023456789">
+                            </div>
+                            <div class="grupo-campo">
+                                <label for="correo">Correo Electrónico <span class="requerido">*</span></label>
+                                <input type="email" id="correo" placeholder="Ej: juan@sena.edu.co">
+                            </div>
+                            <div class="grupo-campo">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" placeholder="Ej: 3001234567">
+                            </div>
+                            <div class="grupo-campo">
+                                <label for="rol">Rol <span class="requerido">*</span></label>
+                                <select id="rol">
+                                    <option value="">Seleccionar rol...</option>
+                                    <option value="aprendiz">Aprendiz</option>
+                                    <option value="instructor">Instructor</option>
+                                    <option value="admin">Administrador</option>
+                                </select>
+                            </div>
+                            <div class="grupo-campo">
+                                <label for="estado">Estado</label>
+                                <select id="estado">
+                                    <option value="activo">Activo</option>
+                                    <option value="inactivo">Inactivo</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-pie">
+                        <button class="btn-modal-cancelar" onclick="document.getElementById('modalUsuario').style.display='none'">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                        <button class="btn-modal-guardar">
+                            <i class="fas fa-save"></i> Guardar Usuario
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Paginación -->
             <div class="paginacion">
                 <button class="btn-paginacion" disabled>
@@ -367,10 +428,10 @@
                                 <a href="gestion_usuarios.html"><i class="fas fa-users-cog"></i> Gestión Usuarios</a>
                             </li>
                             <li>
-                                <a href="reportes.html"><i class="fas fa-chart-bar"></i> Reportes</a>
+                                <a href="reportes.html"><i class="fas fa-chart-bar"></i> reportes</a>
                             </li>
                             <li>
-                                <a href="reportes_fallas.html"><i class="fas fa-bug"></i> Reportes de Fallas</a>
+                                <a href="reportes_fallas.html"><i class="fas fa-bug"></i> reportes de Fallas</a>
                             </li>
                         </ul>
                     </div>

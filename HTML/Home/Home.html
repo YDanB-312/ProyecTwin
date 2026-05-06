@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../CSS/global-css/global.css">
+  <link rel="stylesheet" href="../../CSS/css-pages/index.css">
+  <title>Home - ProyecTwin</title>
+</head>
+<body>
+  <!-- Barra de gobierno -->
+  <div class="barra-gobierno">
+    <div class="contenedor-barra">
+      <span>Portal del SENA - República de Colombia</span>
+    </div>
+  </div>
+
+  <!-- Header principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <div class="grupo-izquierdo">
+        <img src="../../Imagenes/Logo-ProyecTwin.png" alt="Logo" class="logo-header-img">
+        <h1 class="titulo-header">ProyecTwin</h1>
+      </div>
+      
+      <div class="grupo-derecho">
+        <img src="../../Imagenes/logo-sena-blanco.png" alt="SENA" class="logo-sena-header">
+        
+        <div class="buttons">
+          <button class="btn-ingresar" onclick="location.href='../Login/login.html'">Ingresar</button>
+          <button class="btn-registrarme" onclick="location.href='../Register/register.html'">Registrarme →</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido-principal">
+    <div class="home-container">
+      
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <h2 class="hero-titulo">
+          Bienvenido a <span>ProyecTwin</span>
+        </h2>
+        <p class="hero-descripcion">
+          Plataforma inteligente de gestión y detección de similitudes para proyectos de formación del SENA. 
+          Optimiza tus proyectos, evita duplicidades y fomenta la originalidad académica.
+        </p>
+        <div class="hero-botones">
+          <button class="btn-ingresar" onclick="location.href='../Login/login.html'">
+            <i class="fas fa-sign-in-alt"></i> Ingresar Ahora
+          </button>
+          <button class="btn-registrarme" onclick="location.href='../Register/register.html'">
+            <i class="fas fa-user-plus"></i> Crear Cuenta
+          </button>
+        </div>
+      </div>
+
+      <!-- Sección: Tipos de Usuario -->
+      <div class="usuarios-section">
+        <h3 class="usuarios-titulo">Acceso por Rol</h3>
+        <p class="usuarios-subtitulo">ProyecTwin se adapta a las necesidades de cada miembro de la comunidad SENA</p>
+        
+        <div class="usuarios-grid">
+          <!-- Aprendiz -->
+          <div class="tarjeta-usuario aprendiz">
+            <div class="tarjeta-usuario-icono">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <h3>Aprendiz</h3>
+            <p>Gestiona tus proyectos de formación, registra avances y recibe retroalimentación.</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Crear nuevos proyectos</li>
+              <li><i class="fas fa-check"></i> Registrar avances</li>
+              <li><i class="fas fa-check"></i> Recibir notificaciones</li>
+            </ul>
+          </div>
+
+          <!-- Instructor -->
+          <div class="tarjeta-usuario instructor">
+            <div class="tarjeta-usuario-icono">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3>Instructor</h3>
+            <p>Revisa propuestas, evalúa avances y gestiona el progreso de tus aprendices.</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Revisar propuestas</li>
+              <li><i class="fas fa-check"></i> Evaluar avances</li>
+              <li><i class="fas fa-check"></i> Generar reportes</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sección: Cómo Funciona -->
+      <div class="como-funciona">
+        <h3 class="como-funciona-titulo">¿Cómo Funciona ProyecTwin?</h3>
+        
+        <div class="pasos-grid">
+          <div class="paso">
+            <div class="paso-numero">1</div>
+            <h4>Regístrate</h4>
+            <p>Crea tu cuenta como aprendiz o instructor según tu rol en el SENA.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-numero">2</div>
+            <h4>Sube tu Proyecto</h4>
+            <p>Registra tu propuesta y el sistema analizará automáticamente similitudes.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-numero">3</div>
+            <h4>Recibe Evaluación</h4>
+            <p>Instructores revisan y aprueban propuestas con herramientas inteligentes.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-numero">4</div>
+            <h4>Registra Avances</h4>
+            <p>Documenta el progreso de tu proyecto y recibe retroalimentación continua.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjetas de Características -->
+      <div class="tarjetas-container">
+        
+        <!-- Tarjeta 1 -->
+        <div class="tarjeta">
+          <div class="tarjeta-icono tarjeta-icono-buscar">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3 class="tarjeta-titulo">Detección de Similitudes</h3>
+          <p class="tarjeta-texto">
+            Analizamos automáticamente tus propuestas para identificar similitudes con otros proyectos.
+          </p>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="tarjeta">
+          <div class="tarjeta-icono tarjeta-icono-gestionar">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h3 class="tarjeta-titulo">Gestión de Proyectos</h3>
+          <p class="tarjeta-texto">
+            Administra propuestas, registra avances y mantente organizado durante todo el ciclo.
+          </p>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="tarjeta">
+          <div class="tarjeta-icono tarjeta-icono-seguimiento">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="tarjeta-titulo">Seguimiento de Avances</h3>
+          <p class="tarjeta-texto">
+            Registra y revisa el progreso con herramientas de seguimiento académico.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Sección de Estadísticas -->
+      <div class="estadisticas-section">
+        <h3 class="estadisticas-titulo">ProyecTwin en Números</h3>
+        <div class="estadisticas-grid">
+          <div>
+            <div class="estadistica-numero">150+</div>
+            <div class="estadistica-label">Proyectos Gestionados</div>
+          </div>
+          <div>
+            <div class="estadistica-numero">95%</div>
+            <div class="estadistica-label">Detección Precisa</div>
+          </div>
+          <div>
+            <div class="estadistica-numero">300+</div>
+            <div class="estadistica-label">Usuarios Activos</div>
+          </div>
+          <div>
+            <div class="estadistica-numero">24/7</div>
+            <div class="estadistica-label">Disponibilidad</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Llamado a la Acción -->
+      <div class="cta-section">
+        <h3 class="cta-titulo">
+          <i class="fas fa-rocket"></i>
+          ¿Listo para transformar tus proyectos?
+        </h3>
+        <p class="cta-texto">
+          Únete a la comunidad académica del SENA y lleva tus proyectos de formación al siguiente nivel.
+        </p>
+        <button class="btn-ingresar" onclick="location.href='../Register/register.html'">
+          <i class="fas fa-user-plus"></i> Comenzar Ahora
+        </button>
+      </div>
+
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="pie-pagina">
+    <div class="contenedor-pie">
+      <div class="seccion-pie">
+        <h3>ProyecTwin SENA</h3>
+        <p>Sistema de gestión y detección de similitudes para proyectos de formación.</p>
+      </div>
+      <div class="seccion-pie">
+        <h3>Enlaces Rápidos</h3>
+        <ul class="enlaces-pie">
+          <li><a href="Home.html"><i class="fas fa-home"></i> Inicio</a></li>
+          <li><a href="../Login/login.html"><i class="fas fa-sign-in-alt"></i> Ingresar</a></li>
+          <li><a href="../Register/register.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+        </ul>
+      </div>
+      <div class="seccion-pie">
+        <h3>Contacto</h3>
+        <div class="info-contacto">
+          <p><i class="fas fa-phone"></i> 3235421165</p>
+          <p><i class="fas fa-envelope"></i> sena@correo.edu.co</p>
+        </div>
+      </div>
+    </div>
+    <div class="derechos-autor">
+      <p>&copy; 2023 ProyecTwin SENA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
