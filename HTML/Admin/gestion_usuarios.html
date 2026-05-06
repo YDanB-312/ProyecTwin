@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
@@ -89,7 +89,7 @@
                     </h1>
                     <p class="subtitulo-pagina">Administra los usuarios registrados en la plataforma</p>
                 </div>
-                <button class="btn-nuevo-usuario" onclick="document.getElementById('modalUsuario').style.display='flex'">
+                <button class="btn-nuevo-usuario" data-modal-open="modalUsuario">
                     <i class="fas fa-user-plus"></i> Nuevo Usuario
                 </button>
             </div>
@@ -343,7 +343,7 @@
                 <div class="modal-contenido">
                     <div class="modal-encabezado">
                         <h2><i class="fas fa-user-plus"></i> Nuevo Usuario</h2>
-                        <button class="btn-cerrar-modal" onclick="document.getElementById('modalUsuario').style.display='none'">
+                        <button class="btn-cerrar-modal" data-modal-close="modalUsuario">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
@@ -384,7 +384,7 @@
                         </form>
                     </div>
                     <div class="modal-pie">
-                        <button class="btn-modal-cancelar" onclick="document.getElementById('modalUsuario').style.display='none'">
+                        <button class="btn-modal-cancelar" data-modal-close="modalUsuario">
                             <i class="fas fa-times"></i> Cancelar
                         </button>
                         <button class="btn-modal-guardar">
@@ -415,7 +415,7 @@
                     <div class="seccion-pie">
                         <h3>ProyecTwin SENA</h3>
                         <p>
-                            Sistema de gestión y detección de similitudes para proyectos de formación.
+                            Sistema de gestión y detección de Similitudes para proyectos de formación.
                         </p>
                     </div>
                     <div class="seccion-pie">
@@ -452,5 +452,6 @@
             </footer>
         </div>
     </main>
+    <script src="../../JS/admin/gestion_usuarios.js"></script>
 </body>
 </html>

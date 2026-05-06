@@ -342,11 +342,49 @@
   transform: scale(1.05);
 }
 
-/* Responsive */
+/* Responsive específico para mensajes */
 @media (max-width: 1024px) {
   .contenedor-mensajes {
     height: calc(100vh - 200px);
   }
+}
+
+@media (max-width: 768px) {
+  .contenedor-mensajes {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .lista-contactos,
+  .panel-conversacion {
+    width: 100%;
+  }
+
+  .panel-conversacion {
+    height: 500px;
+  }
+
+  .mensaje {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mensaje {
+    max-width: 95%;
+  }
+
+  .avatar-contacto {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .entrada-mensaje {
+    padding: 10px;
+  }
+}
+
 }
 
 @media (max-width: 768px) {

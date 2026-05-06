@@ -1,31 +1,11 @@
-/* Contenido principal */
+/* Reportar Falla - Estilos específicos */
+
 .contenedor-gestion {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Encabezado de pagina */
-.encabezado-pagina {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.titulo-pagina {
-    font-size: 1.8rem;
-    color: var(--color-texto);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.subtitulo-pagina {
-    font-size: 1rem;
-    color: var(--color-texto-claro);
-    margin: 0;
-}
+.subtitulo-pagina { font-size: 1rem; color: var(--color-texto-claro); margin: 0; }
 
 /* Seccion formulario tipo card */
 .seccion-formulario-card {
@@ -45,65 +25,20 @@
     background: var(--color-fondo);
 }
 
-.formulario-titulo {
-    font-size: 1.2rem;
-    color: var(--color-texto);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.formulario-titulo i {
-    color: var(--color-advertencia);
-}
-
-.formulario-cuerpo {
-    padding: 24px;
-}
-
-.formulario-pie {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    padding: 20px 24px;
-    border-top: 1px solid var(--color-borde);
-    background: var(--color-fondo);
-}
+.formulario-titulo { font-size: 1.2rem; color: var(--color-texto); font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.formulario-titulo i { color: var(--color-advertencia); }
+.formulario-cuerpo { padding: 24px; }
+.formulario-pie { display: flex; justify-content: flex-end; gap: 12px; padding: 20px 24px; border-top: 1px solid var(--color-borde); background: var(--color-fondo); }
 
 /* Grid de campos */
-.formulario-campos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+.formulario-campos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grupo-campos { display: flex; flex-direction: column; gap: 20px; }
+.grupo-campo { display: flex; flex-direction: column; gap: 8px; }
+.campo-completo { grid-column: 1 / -1; }
+.grupo-campo label { font-size: 0.9rem; font-weight: 500; color: var(--color-texto); }
+.requerido { color: var(--color-peligro); }
 
-.grupo-campos {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.grupo-campo {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.campo-completo {
-    grid-column: 1 / -1;
-}
-
-.grupo-campo label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--color-texto);
-}
-
-.requerido {
-    color: var(--color-peligro);
-}
-
+/* Inputs específicos para reportes */
 .input-select, .input-textarea, .input-text {
     width: 100%;
     padding: 10px 12px;
@@ -115,215 +50,29 @@
     transition: all 0.3s;
     font-family: inherit;
 }
+.input-select:focus, .input-textarea:focus, .input-text:focus { outline: none; border-color: var(--color-primario); box-shadow: 0 0 0 3px rgba(0, 175, 0, 0.1); }
+.input-textarea { resize: vertical; min-height: 120px; }
 
-.input-select:focus, .input-textarea:focus, .input-text:focus {
-    outline: none;
-    border-color: var(--color-primario);
-    box-shadow: 0 0 0 3px rgba(0, 175, 0, 0.1);
-}
+.input-file { padding: 10px; border: 1px dashed var(--color-borde); border-radius: 6px; background: var(--color-fondo); cursor: pointer; transition: all 0.3s; }
+.input-file:hover { border-color: var(--color-primario); background: rgba(0, 175, 0, 0.02); }
 
-.input-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.input-file {
-    padding: 10px;
-    border: 1px dashed var(--color-borde);
-    border-radius: 6px;
-    background: var(--color-fondo);
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.input-file:hover {
-    border-color: var(--color-primario);
-    background: rgba(0, 175, 0, 0.02);
-}
-
-.campo-info {
-    font-size: 0.8rem;
-    color: var(--color-texto-claro);
-    font-style: italic;
-}
-
-/* Botones */
-.btn-primario, .btn-secundario {
-    padding: 10px 24px;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s;
-    text-decoration: none;
-}
-
-.btn-primario {
-    background: var(--color-primario);
-    color: white;
-}
-
-.btn-primario:hover {
-    background: #009900;
-    transform: translateY(-2px);
-}
-
-.btn-secundario {
-    background: white;
-    color: var(--color-texto-claro);
-    border: 1px solid var(--color-borde);
-}
-
-.btn-secundario:hover {
-    background: var(--color-fondo);
-    border-color: var(--color-texto-claro);
-}
-
-/* Seccion tabla */
-.seccion-tabla {
-    background: white;
-    border-radius: var(--radio-borde);
-    box-shadow: var(--sombra-suave);
-    overflow: hidden;
-    margin-bottom: 30px;
-}
-
-.encabezado-tabla {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid var(--color-borde);
-}
-
-.titulo-tabla {
-    font-size: 1.1rem;
-    color: var(--color-texto);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.total-registros {
-    font-size: 0.85rem;
-    color: var(--color-texto-claro);
-}
-
-.contenedor-tabla {
-    overflow-x: auto;
-}
-
-.tabla-usuarios {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.tabla-usuarios thead {
-    background: var(--color-fondo);
-}
-
-.tabla-usuarios th {
-    padding: 14px 16px;
-    text-align: left;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-texto-claro);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid var(--color-borde);
-}
-
-.tabla-usuarios td {
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--color-borde);
-    font-size: 0.9rem;
-    color: var(--color-texto);
-}
-
-.tabla-usuarios tbody tr:hover {
-    background: rgba(0, 175, 0, 0.03);
-}
-
-.tabla-usuarios tbody tr:last-child td {
-    border-bottom: none;
-}
+.campo-info { font-size: 0.8rem; color: var(--color-texto-claro); font-style: italic; }
 
 /* Badges de tipo de falla */
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.badge-error {
-    background: rgba(239, 68, 68, 0.1);
-    color: var(--color-peligro);
-}
-
-.badge-datos {
-    background: rgba(37, 99, 235, 0.1);
-    color: #2563eb;
-}
-
-.badge-proyecto {
-    background: rgba(168, 85, 247, 0.1);
-    color: #a855f7;
-}
-
-.badge-otro {
-    background: rgba(100, 116, 139, 0.1);
-    color: #64748b;
-}
+.badge-error { background: rgba(239, 68, 68, 0.1); color: var(--color-peligro); }
+.badge-datos { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
+.badge-proyecto { background: rgba(168, 85, 247, 0.1); color: #a855f7; }
+.badge-otro { background: rgba(100, 116, 139, 0.1); color: #64748b; }
 
 /* Estados de reportes */
-.estado {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
+.estado-resuelto { background: rgba(16, 185, 129, 0.1); color: var(--color-exito); }
+.estado-en-proceso { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
+.estado-pendiente-falla { background: rgba(245, 158, 11, 0.1); color: var(--color-advertencia); }
+.estado-cerrado { background: rgba(100, 116, 139, 0.1); color: #64748b; }
 
-.estado-resuelto {
-    background: rgba(16, 185, 129, 0.1);
-    color: var(--color-exito);
-}
-
-.estado-en-proceso {
-    background: rgba(37, 99, 235, 0.1);
-    color: #2563eb;
-}
-
-.estado-pendiente {
-    background: rgba(245, 158, 11, 0.1);
-    color: var(--color-advertencia);
-}
-
-.estado-cerrado {
-    background: rgba(100, 116, 139, 0.1);
-    color: #64748b;
-}
-
-/* Footer */
-/* Responsive */
-@media (max-width: 1024px) {
-    }
-
+/* Responsive específico */
 @media (max-width: 768px) {
     .formulario-campos { grid-template-columns: 1fr; }
     .formulario-pie { flex-direction: column; }
-    .formulario-pie .btn-primario,
-    .formulario-pie .btn-secundario { width: 100%; justify-content: center; }
-    .encabezado-tabla { flex-direction: column; gap: 10px; align-items: flex-start; }
-    }
+    .formulario-pie .btn-primario, .formulario-pie .btn-secundario { width: 100%; justify-content: center; }
+}

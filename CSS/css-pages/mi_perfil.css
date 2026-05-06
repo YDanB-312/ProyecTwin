@@ -1,282 +1,30 @@
-/* Contenido principal */
+/* Mi Perfil - Estilos específicos de página */
+
 .contenedor-perfil {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Encabezado de página */
-.encabezado-pagina {
-    margin-bottom: 30px;
-}
-
-.titulo-pagina {
-    font-size: 1.8rem;
-    color: var(--color-texto);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.descripcion-pagina {
-    color: var(--color-texto-claro);
-    font-size: 1rem;
-}
-
-/* Layout de perfil */
+/* Layout específico: El perfil del aprendiz usa 1fr 2fr, global usa 300px 1fr */
 .layout-perfil {
-    display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 30px;
     margin-bottom: 30px;
+    align-items: start;
 }
 
-/* Tarjetas */
-.tarjeta {
-    background: white;
-    border-radius: var(--radio-borde);
-    padding: 25px;
-    box-shadow: var(--sombra-media);
-}
-
-.tarjeta-perfil {
-    text-align: center;
-}
-
-.titulo-seccion {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    color: var(--color-texto);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--color-borde);
-}
-
-/* Información de perfil */
-.avatar-perfil {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg, var(--color-primario), var(--color-accento));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 2.5rem;
-    position: relative;
-}
-
-.cambiar-avatar {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    width: 35px;
-    height: 35px;
-    background: var(--color-primario);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    border: 3px solid white;
-}
-
-.nombre-usuario {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: var(--color-texto);
-}
-
-.rol-usuario {
-    color: var(--color-texto-claro);
-    margin-bottom: 20px;
-    font-size: 1rem;
-}
-
-.estadisticas-perfil {
-    display: flex;
-    justify-content: space-around;
-    margin: 25px 0;
-    padding: 20px 0;
-    border-top: 1px solid var(--color-borde);
-    border-bottom: 1px solid var(--color-borde);
-}
-
-.estadistica {
-    text-align: center;
-}
-
-.valor-estadistica {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-primario);
-    display: block;
-}
-
-.etiqueta-estadistica {
-    font-size: 0.85rem;
-    color: var(--color-texto-claro);
-}
-
-.btn-primario {
-    background: var(--color-primario);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* Ajustes de botón para formularios de perfil */
+.formulario-perfil .btn-primario,
+.formulario-perfil .btn-secundario {
     width: 100%;
     justify-content: center;
     margin-top: 10px;
 }
 
-.btn-primario:hover {
-    background: var(--color-secundario);
-    transform: translateY(-2px);
-}
-
-.btn-secundario {
-    background: transparent;
-    color: var(--color-texto-claro);
-    border: 1px solid var(--color-borde);
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.btn-secundario:hover {
-    background: var(--color-fondo);
-    border-color: var(--color-texto-claro);
-}
-
-/* Formularios */
-.formulario-perfil {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.grupo-formulario {
-    margin-bottom: 20px;
-}
-
-.etiqueta {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--color-texto);
-}
-
-.etiqueta.requerido::after {
-    content: " *";
-    color: var(--color-peligro);
-}
-
-.input-text, .select {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid var(--color-borde);
-    border-radius: 6px;
-    font-size: 1rem;
-    color: var(--color-texto);
-    transition: all 0.3s;
-}
-
-.input-text:focus, .select:focus {
-    outline: none;
-    border-color: var(--color-primario);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-.grupo-campos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.campo-informacion {
-    font-size: 0.85rem;
-    color: var(--color-texto-claro);
-    margin-top: 5px;
-    font-style: italic;
-}
-
-/* Sección de seguridad */
-.seccion-seguridad {
-    margin-top: 30px;
-}
-
-.alerta-seguridad {
-    background: rgba(245, 158, 11, 0.1);
-    border-left: 4px solid var(--color-advertencia);
-    padding: 15px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    display: flex;
-    gap: 12px;
-}
-
-.icono-alerta {
-    color: var(--color-advertencia);
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.contenido-alerta h4 {
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: var(--color-texto);
-}
-
-.contenido-alerta p {
-    font-size: 0.9rem;
-    color: var(--color-texto-claro);
-}
-
-/* Footer */
-/* Responsive */
-@media (max-width: 1024px) {
-    .layout-perfil {
-        grid-template-columns: 1fr;
-    }
-    
-    .grupo-campos {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* Responsive específico */
 @media (max-width: 768px) {
     .estadisticas-perfil {
         flex-direction: column;
         gap: 15px;
-    }
-    
-    .info-usuario {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-end;
     }
 }
